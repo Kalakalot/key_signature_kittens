@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:200,300,400&display=swap');
 
 .App {
   /* text-align: center; */
@@ -27,11 +28,14 @@
 h1 {
   font-family: 'Fredoka One', cursive;
   color: #c9e165;
+  letter-spacing: 5px;
   font-size: 2em;
 }
 
 h3 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: #1d7589;
   font-size: 0.75em;
+  font-weight: 400;
+  letter-spacing: 2.5px;
 }
