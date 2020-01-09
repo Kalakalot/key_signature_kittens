@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
-import Sprites from './components/Sprites';
 import PropTypes from 'prop-types';
 
-class App extends Component {
+class Quiz extends Component {
   constructor() {
     super();
 
     this.state = {
-      // initial_visit: true,
+      correct_answers: null,
+      incorrect_answers: null,
     }
   };
-
   render() {
 
   return (
@@ -26,4 +24,9 @@ class App extends Component {
 }
 }
 
-export default App;
+export default Quiz;
+
+Quiz.propTypes = {
+  correct_answers: PropTypes.number,
+  incorrect_answers: PropTypes.number,
+}

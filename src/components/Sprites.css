@@ -1,0 +1,7 @@
+.cat-walking-container {
+  display: flex;
+  flex-direction: row;
+}
+.cat-walking__white--right {
+  width: 50px;
+}

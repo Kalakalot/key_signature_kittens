@@ -17,18 +17,10 @@
   line-height: 0em; 
 }
 
-.cat-walking-container {
-  display: flex;
-  flex-direction: row;
-}
-.cat-walking__white--right {
-  width: 50px;
-}
-
 h1 {
   font-family: 'Fredoka One', cursive;
   color: #c9e165;
-  letter-spacing: 5px;
+  letter-spacing: 7px;
   font-size: 2em;
 }
 
