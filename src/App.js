@@ -12,6 +12,23 @@ class App extends Component {
     }
   };
 
+  componentDidMount() {
+    axios.get('http://127.0.0.1:5000/')
+    .then((response) => {
+      let quizDatabase = response.data.map((quizDataSet) => {
+        return quizDataSet;
+    });
+
+      this.setState({ 
+        quiz: quizDatabase,
+        error: '' 
+      });
+    })
+    .catch((error) => {
+      this.setState({ error: error.message });
+    });
+  }
+
   render() {
 
   return (
