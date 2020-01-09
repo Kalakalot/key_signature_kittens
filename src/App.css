@@ -9,11 +9,17 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   font-size: 2.5em;
   color: white;
+  line-height: 0em; 
 }
 
+.cat-walking-container {
+  display: flex;
+  flex-direction: row;
+}
 .cat-walking__white--right {
   width: 50px;
 }
