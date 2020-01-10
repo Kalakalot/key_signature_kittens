@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 import Sprites from './components/Sprites';
 import PropTypes from 'prop-types';
 
@@ -17,7 +18,7 @@ class App extends Component {
     .then((response) => {
       let quizDatabase = response.data.map((quizDataSet) => {
         return quizDataSet;
-    });
+      });
 
       this.setState({ 
         quiz: quizDatabase,
@@ -30,17 +31,18 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.quiz);
 
-  return (
-    <div className="App">
-      <div className="App-header">
-        <h1>key signature kittens</h1>
-        <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
-        <Sprites/>
+    return (
+      <div className="App">
+        <div className="App-header">
+          <h1>key signature kittens</h1>
+          <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
+          <Sprites/>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 }
 
 export default App;
