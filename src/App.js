@@ -12,7 +12,6 @@ class App extends Component {
     super(props);
     this.state = {
     counter: 0,
-    questionId: 1,
     question: '',
     answerOptions: [],
     correct: null,
@@ -51,27 +50,7 @@ class App extends Component {
   //   });
   // }
 
-  // componentWillMount() {
-  //   const shuffledAnswerOptions = this.state.quiz.map((element) => this.shuffleArray(element.answer_options));  
-  //   this.setState({
-  //     answerOptions: shuffledAnswerOptions[0]
-  //   });
-  // }
-
-  // shuffleArray(array) {
-  //   let currentIndex = array.length, temporaryValue, randomIndex;
-  //   // While there remain elements to shuffle...
-  //   while (0 !== currentIndex) {
-  //     // Pick a remaining element...
-  //     randomIndex = Math.floor(Math.random() * currentIndex);
-  //     currentIndex -= 1;
-  //     // And swap it with the current element.
-  //     temporaryValue = array[currentIndex];
-  //     array[currentIndex] = array[randomIndex];
-  //     array[randomIndex] = temporaryValue;
-  //   }
-  //   return array;
-  // };
+ 
 
   render() {
     console.log(quizData);
@@ -83,8 +62,9 @@ class App extends Component {
           <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
           <Sprites/>
         </div>
-        <p>{quizData[0]["key_signature"]}</p>
-        {/* <Questions allQuestions={this.state.quiz} hello="hello"/> */}
+        {/* <p>{quizData[0]["key_signature"]}</p>
+        <img src={quizData[0]["treble_url"]} alt={quizData[0]["alt"]}/> */}
+        <Questions allQuestions={quizData}/>
       </div>
     )
   }

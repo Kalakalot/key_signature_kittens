@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-  function Question(props) {
+  const Question = (props) => {
+    
+    console.log(props)
+
     return (
       <div>
         <h2 className="question">What key signature is this?</h2>
-        <img src={props.treble_url} alt={props.alt}/>
+        <img src={props.trebleURL} alt={props.alt}/>
+        <p>{props.answerOptions}</p>
       </div>
     );
   }
@@ -13,6 +17,6 @@ import PropTypes from 'prop-types';
   export default Question;
 
   Question.propTypes = {
-    treble_url: PropTypes.string.isRequired,
-    bass_url: PropTypes.string.isRequired
+    // treble_url: PropTypes.string.isRequired,
+    // bass_url: PropTypes.string.isRequired
   };
