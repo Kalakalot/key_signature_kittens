@@ -12,6 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
     counter: 0,
+    questionID: 1, 
     question: '',
     answerOptions: [],
     correct: null,
@@ -62,8 +63,6 @@ class App extends Component {
           <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
           <Sprites/>
         </div>
-        {/* <p>{quizData[0]["key_signature"]}</p>
-        <img src={quizData[0]["treble_url"]} alt={quizData[0]["alt"]}/> */}
         <Questions allQuestions={quizData}/>
       </div>
     )

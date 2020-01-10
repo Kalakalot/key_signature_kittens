@@ -4,9 +4,8 @@ import Question from './Question';
 //import PropTypes from 'prop-types';
 
 const Questions = (props) => {
-  // to display key signature for first element
-  console.log(props.allQuestions[0]["key_signature"])
   const questionCollection = props.allQuestions
+    // to display key signature for second element
   console.log(questionCollection[1]["key_signature"])
 
   return (
@@ -14,6 +13,7 @@ const Questions = (props) => {
     {(questionCollection).map((question, i) => {
       return(
         <Question
+          key={i}
           keySignature={question["key_signature"]}
           trebleURL={question["treble_url"]}
           alt={question["alt"]}
