@@ -43,7 +43,3 @@ const Sprites = () => {
 }
 
 export default Sprites;
-
-Sprites.propTypes = {
-  // sprite: PropTypes.object,
-}
