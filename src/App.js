@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Sprites from './components/Sprites';
+import Quiz from './components/Quiz';
 import Question from './components/Question';
 import Questions from './components/Questions';
 import quizData from './components/quizData';
@@ -25,6 +26,7 @@ class App extends Component {
     };
   }
 
+  // lifecycle-based mapping of quiz answer options code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6
   componentWillMount() {
     const shuffledAnswerOptions = quizData.map((question) => this.shuffleArray(question.answer_options));  
     this.setState({
@@ -33,8 +35,7 @@ class App extends Component {
     });
   }
 
-
-  // shuffle code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6
+  // shuffle code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6 (though I\'ve seen this exact code including notes elsewhere)
   shuffleArray(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     // While there remain elements to shuffle...
@@ -68,24 +69,43 @@ class App extends Component {
   //   });
   // }
 
- 
-
   render() {
-    console.log(quizData);
-    console.log(this.state.answerOptions);
-
-
     return (
       <div className="App">
         <div className="App-header">
-          <h1>key signature kittens</h1>
-          <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
-          <Sprites/>
+        <h1>key signature kittens</h1>
+        <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
+        <Sprites/>
         </div>
-        <Questions allQuestions={quizData}/>
+        {/* <Quiz
+          answer={this.state.answer}
+          answerOptions={this.state.answerOptions}
+          questionId={this.state.questionId}
+          question={this.state.question}
+          questionTotal={quizData.length}
+          onAnswerSelected={this.handleAnswerSelected}
+        /> */}
+        <Questions allQuestions={quizData} />
       </div>
     )
   }
+
+  // render() {
+  //   console.log(quizData);
+  //   console.log(this.state.answerOptions);
+
+
+  //   return (
+  //     <div className="App">
+  //       <div className="App-header">
+  //         <h1>key signature kittens</h1>
+  //         <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
+  //         <Sprites/>
+  //       </div>
+  //       <Questions allQuestions={quizData}/>
+  //     </div>
+  //   )
+  // }
 }
 
 export default App;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Questions from './Questions'
 
   const Question = (props) => {
     
@@ -14,6 +15,6 @@ import PropTypes from 'prop-types';
   export default Question;
 
   Question.propTypes = {
-    treble_url: PropTypes.string.isRequired,
+    trebleURL: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired
   };
