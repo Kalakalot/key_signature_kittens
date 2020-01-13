@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 const Quiz = (props) => {
 
-
   function renderAnswerOptions(key) {
     return (
       <AnswerOption

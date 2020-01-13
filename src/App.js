@@ -5,6 +5,7 @@ import axios from 'axios';
 import Sprites from './components/Sprites';
 import Quiz from './components/Quiz';
 import Question from './components/Question';
+import Result from './components/Result';
 import update from 'react-addons-update';
 import PropTypes from 'prop-types';
 
@@ -24,13 +25,10 @@ class App extends Component {
         incorrect: 0,
       },
       kittensEarned: 0,
-      result: ''
+      result: '',
     };
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
-
-
-
 
   // lifecycle-based mapping of quiz answer options code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6
   componentWillMount() {
@@ -41,7 +39,7 @@ class App extends Component {
     });
   }
 
-  // shuffle code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6 (though I\'ve seen this exact code including notes elsewhere)
+  // shuffle code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6 (may n ot be original source; I\'ve seen this exact code including notes elsewhere)
   shuffleArray(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
     // While there remain elements to shuffle...
@@ -105,11 +103,50 @@ class App extends Component {
     if (this.state.questionId < quizData.length) {
         setTimeout(() => this.setNextQuestion(), 300);
       } else {
-        // do nothing for now
+        setTimeout(() => this.setResults(this.getResults()), 300);
       }
   }
 
+  getResults() {
+    const answersCount = this.state.answersCount;
+    const answersCountKeys = Object.keys(answersCount);
+    const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
+    const maxAnswerCount = Math.max.apply(null, answersCountValues);
+    return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
+  }
+
+  setResults (result) {
+    if (result.length === 1) {
+      this.setState({ result: result[0] });
+    } else {
+      this.setState({ result: 'Undetermined' });
+    }
+  }
+
+  // renderQuiz() {
+  //   return (
+  //     <Quiz
+  //       answer={this.state.answer}
+  //       answerOptions={this.state.answerOptions}
+  //       questionId={this.state.questionId}
+  //       question={this.state.question}
+  //       questionTotal={quizData.length}
+  //       onAnswerSelected={this.handleAnswerSelected}
+  //     />
+  //   );
+  // }
+
+  // renderResult() {
+  //   return (
+  //     <Result quizResult={this.state.result} />
+  //   );
+  // }
+
   render() {
+
+
+    // {this.state.result ? this.renderResult() : this.renderQuiz()};
+
     return (
       <div className="App">
         <div className="App-header">
@@ -117,8 +154,6 @@ class App extends Component {
         <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
         <Sprites/>
         </div>
-      
-      
         <Quiz
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
@@ -126,12 +161,14 @@ class App extends Component {
         question={this.state.question}
         questionTotal={quizData.length}
         onAnswerSelected={this.handleAnswerSelected}
-        />
-          
-
+      />
       </div>
-    )
-  }
+    );         
+  };
 }
 
 export default App;
+
+App.propTypes = {
+
+}
