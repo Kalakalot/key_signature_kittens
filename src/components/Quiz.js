@@ -19,6 +19,7 @@ const Quiz = (props) => {
     );
   }
 
+console.log(props.question)
 
   return (
     <div className="quiz">
@@ -26,7 +27,7 @@ const Quiz = (props) => {
         counter={props.questionId}
         total={props.questionTotal}
       />
-      <Question content={props.question}/>
+      <Question question={props.question} alt={props.alt}/>
       <ul className="answerOptions">
         {props.answerOptions.map(renderAnswerOptions)}
       </ul>
