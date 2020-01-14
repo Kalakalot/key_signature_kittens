@@ -102,12 +102,13 @@ class App extends Component {
   
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
-    // assign kitten value
-    if (this.state.answer === "correct") {
+    console.log(`event.currentTarget.value: ${event.currentTarget.value}`)
+    // add kitten value if answer is correct
+    if (event.currentTarget.value === "correct") {
       this.setState({
         kittensEarned: this.state.kittensEarned += this.state.kittenValue
-          });
-        };
+          })
+        }
     // adds short pause before advancing to next question or results
     if (this.state.questionId < quizData.length) {
       setTimeout(() => this.setNextQuestion(), 300);
@@ -164,7 +165,9 @@ class App extends Component {
         render() {
           console.log(this.state.answer); 
           console.log(`this.state.kittenValue: ${this.state.kittenValue}`);
-          console.log(`this.state.kittensEarned: ${this.state.kittensEarned}`)
+          console.log(`this.state.kittensEarned: ${this.state.kittensEarned}`);
+         
+          
           
           return (
             <div className="App">
