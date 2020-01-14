@@ -41,7 +41,6 @@ Quiz.propTypes = {
   alt: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
   answerOptions: PropTypes.array.isRequired,
-  counter: PropTypes.number.isRequired,
   question: PropTypes.string.isRequired,
   questionId: PropTypes.number.isRequired,
   questionTotal: PropTypes.number.isRequired,
