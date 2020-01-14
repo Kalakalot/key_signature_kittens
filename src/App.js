@@ -112,7 +112,7 @@ class App extends Component {
   // this is not currently doing anything and I don't know why
   renderResults() {
     return (
-     <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
+    <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
     );
   }
 
@@ -136,14 +136,14 @@ class App extends Component {
     return (
       <>
         <Quiz
-          answer={this.state.answer}
+        answer={this.state.answer}
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
         question={this.state.question}
         questionTotal={quizData.length}
         onAnswerSelected={this.handleAnswerSelected}
       />
-        <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
+        {/* <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/> */}
         </>
     );
   }
@@ -158,7 +158,10 @@ class App extends Component {
     console.log(`You got ${this.state.answersCount.correct} out of ${quizData.length} questions right`)
 
 
-    this.state.answersCount == quizData.length ? this.renderResult() : this.renderQuiz();
+    // this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz();
+
+    console.log(`answers provided: ${this.state.answersCount.correct + this.state.answersCount.incorrect}`)
+    console.log(`total questions: ${quizData.length}`)
 
     return (
       <div className="App">
@@ -167,7 +170,9 @@ class App extends Component {
         <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
         <Sprites/>
         </div>
-        {this.state.answersCount == quizData.length ? this.renderResult() : this.renderQuiz()};
+
+        {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()};
+        {/* {this.state.answersCount === quizData.length ? this.renderResult() : this.renderQuiz()} */}
         {/* <Quiz
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
