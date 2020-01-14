@@ -102,7 +102,6 @@ class App extends Component {
   
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
-    console.log(`event.currentTarget.value: ${event.currentTarget.value}`)
     // add kitten value if answer is correct
     if (event.currentTarget.value === "correct") {
       this.setState({
@@ -122,23 +121,7 @@ class App extends Component {
       <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
       );
     }
-    
-    // getResults() {
-    // const answersCount = this.state.answersCount;
-    // const answersCountKeys = Object.keys(answersCount);
-    // const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
-    // const maxAnswerCount = Math.max.apply(null, answersCountValues);
-    // return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
-    // }
-    
-    // setResults (result) {
-    //   if (result.length === 1) {
-    //     this.setState({ result: result[0] });
-    //   } else {
-    //     this.setState({ result: 'Undetermined' });
-    //   }
-    // }
-    
+  
     renderQuiz() {
       return (
         <>
@@ -166,8 +149,6 @@ class App extends Component {
           console.log(this.state.answer); 
           console.log(`this.state.kittenValue: ${this.state.kittenValue}`);
           console.log(`this.state.kittensEarned: ${this.state.kittensEarned}`);
-         
-          
           
           return (
             <div className="App">
