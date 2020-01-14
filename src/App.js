@@ -104,7 +104,6 @@ class App extends Component {
     if (this.state.questionId < quizData.length) {
         setTimeout(() => this.setNextQuestion(), 300);
       } else {
-        // setTimeout(() => this.setResults(this.getResults()), 300);
         setTimeout(() => this.renderResults(), 300);
       }
   }
@@ -164,16 +163,6 @@ class App extends Component {
         </div>
 
         {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()};
-        {/* {this.state.answersCount === quizData.length ? this.renderResult() : this.renderQuiz()} */}
-        {/* <Quiz
-        answer={this.state.answer}
-        answerOptions={this.state.answerOptions}
-        questionId={this.state.questionId}
-        question={this.state.question}
-        alt={this.state.alt}
-        questionTotal={quizData.length}
-        onAnswerSelected={this.handleAnswerSelected}
-      /> */}
       </div>
     );         
   }; 
