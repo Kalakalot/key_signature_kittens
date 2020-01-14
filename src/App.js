@@ -135,6 +135,7 @@ class App extends Component {
     return (
       <>
         <Quiz
+        alt={this.state.alt}
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}

@@ -1,7 +1,6 @@
 import React from 'react';
 import Spritesheet from 'react-responsive-spritesheet';
 import './Sprites.css';
-import PropTypes from 'prop-types';
 
 const Sprites = () => {
   return (

@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+
   function Result(props) {
     return (
       <div className="result">
@@ -10,5 +13,6 @@ import React from 'react';
   export default Result;
 
   Result.propTypes = {
-    // quizResult: React.PropTypes.string.isRequired,
+    correctAnswers: PropTypes.number.isRequired,
+    totalQuestions: PropTypes.number.isRequired
   };
