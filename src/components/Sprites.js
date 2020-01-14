@@ -43,3 +43,14 @@ const Sprites = () => {
 }
 
 export default Sprites;
+
+Sprites.propTypes = {
+  image: PropTypes.string.isRequired,
+  widthFrame: PropTypes.number.isRequired, 
+  heightFrame: PropTypes.number.isRequired,
+  steps: PropTypes.number.isRequired,
+  fps: PropTypes.number.isRequired,
+  loop: PropTypes.bool.isRequired,
+  autoplay: PropTypes.bool.isRequired,
+  startAt: PropTypes.number.isRequired,
+}
