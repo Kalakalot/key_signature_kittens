@@ -106,7 +106,7 @@ class App extends Component {
     // add kitten value if answer is correct
     if (event.currentTarget.value === "correct") {
       this.setState({
-        kittensEarned: this.state.kittensEarned += this.state.kittenValue
+        kittensEarned: (Number(this.state.kittensEarned) + Number(this.state.kittenValue))
           })
         }
     // adds short pause before advancing to next question or results
