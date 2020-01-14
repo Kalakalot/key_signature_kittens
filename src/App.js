@@ -8,10 +8,10 @@ import Result from './components/Result';
 import update from 'react-addons-update';
 
 class App extends Component {
-
+  
   constructor(props) {
     super(props);
-
+    
     this.state = {
       counter: 0,
       questionId: 1, 
@@ -24,21 +24,21 @@ class App extends Component {
         incorrect: 0,
       },
       kittensEarned: 0,
-      // result: '',
     };
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
-
+  
   // lifecycle-based mapping of quiz answer options code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6
   UNSAFE_componentWillMount() {
     const shuffledAnswerOptions = quizData.map((question) => this.shuffleArray(question.answers));  
     this.setState({
       question: quizData[0].question,
       alt: quizData[0].alt,
-      answerOptions: shuffledAnswerOptions[0]
+      answerOptions: shuffledAnswerOptions[0],
+      kittenValue: quizData[0].kitten_value
     });
   }
-
+  
   // shuffle code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6 (may not be original source; I\'ve seen this exact code including notes elsewhere)
   shuffleArray(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -54,9 +54,9 @@ class App extends Component {
     }
     return array;
   };
-
-// Code used to pull data from external MongoDB database
-
+  
+  // Code used to pull data from external MongoDB database
+  
   // componentDidMount() {
   //   axios.get('http://127.0.0.1:5000/')
   //   .then(
@@ -64,7 +64,7 @@ class App extends Component {
   //     const quizDatabase = response.data.map((quizDataSet) => {
   //       return quizDataSet;
   //     });
-
+  
   //     this.setState({ 
   //       quiz: quizDatabase,
   //       error: '' 
@@ -74,7 +74,7 @@ class App extends Component {
   //     this.setState({ error: error.message });
   //   });
   // }
-
+  
   setUserAnswer(answer) {
     const updatedAnswersCount = update(this.state.answersCount, {
       [answer]: {$apply: (currentValue) => currentValue + 1}
@@ -84,7 +84,7 @@ class App extends Component {
       answer: answer
     });
   }
-
+  
   setNextQuestion() {
     const counter = this.state.counter + 1;
     const questionId = this.state.questionId + 1;
@@ -94,78 +94,90 @@ class App extends Component {
       questionId: questionId,
       question: quizData[counter].question,
       answerOptions: quizData[counter].answers,
+      alt: quizData[counter].alt,
+      kittenValue: quizData[counter].kitten_value,
       answer: ''
     });
   }
-
+  
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
+    // assign kitten value
+    if (this.state.answer === "correct") {
+      this.setState({
+        kittensEarned: this.state.kittensEarned += this.state.kittenValue
+          });
+        };
     // adds short pause before advancing to next question or results
     if (this.state.questionId < quizData.length) {
-        setTimeout(() => this.setNextQuestion(), 300);
-      } else {
-        setTimeout(() => this.renderResults(), 300);
-      }
+      setTimeout(() => this.setNextQuestion(), 300);
+    } else {
+      setTimeout(() => this.renderResults(), 300);
+    }
   }
-
+  
   renderResults() {
     return (
-    <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
-    );
-  }
-
-  // getResults() {
+      <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
+      );
+    }
+    
+    // getResults() {
     // const answersCount = this.state.answersCount;
     // const answersCountKeys = Object.keys(answersCount);
     // const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
     // const maxAnswerCount = Math.max.apply(null, answersCountValues);
     // return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
-// }
+    // }
     
-  // setResults (result) {
-  //   if (result.length === 1) {
-  //     this.setState({ result: result[0] });
-  //   } else {
-  //     this.setState({ result: 'Undetermined' });
-  //   }
-  // }
-
-  renderQuiz() {
-    return (
-      <>
+    // setResults (result) {
+    //   if (result.length === 1) {
+    //     this.setState({ result: result[0] });
+    //   } else {
+    //     this.setState({ result: 'Undetermined' });
+    //   }
+    // }
+    
+    renderQuiz() {
+      return (
+        <>
         <Quiz
         alt={this.state.alt}
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
+        kittenValue={this.state.kittenValue}
         questionId={this.state.questionId}
         question={this.state.question}
         questionTotal={quizData.length}
         onAnswerSelected={this.handleAnswerSelected}
-      />
+        />
         </>
-    );
-  }
-
-  renderResult() {
-    return (
-      <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
-    );
-  }
-
-  render() {
-
-    return (
-      <div className="App">
-        <div className="App-header">
-        <h1>key signature kittens</h1>
-        <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
-        <Sprites/>
-        </div>
-
-        {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()};
-      </div>
-    );         
-  }; 
-}
-
-export default App;
+        );
+      }
+      
+      renderResult() {
+        return (
+          <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
+          );
+        }
+        
+        render() {
+          console.log(this.state.answer); 
+          console.log(`this.state.kittenValue: ${this.state.kittenValue}`);
+          console.log(`this.state.kittensEarned: ${this.state.kittensEarned}`)
+          
+          return (
+            <div className="App">
+            <div className="App-header">
+            <h1>key signature kittens</h1>
+            <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
+            <Sprites/>
+            </div>
+            
+            {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()};
+            </div>
+            );         
+          }; 
+        }
+        
+        export default App;
