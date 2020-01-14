@@ -177,6 +177,9 @@ class App extends Component {
             <Sprites/>
             </div>
             
+            <section className="kittens_earned">
+              <h2 className="score">Kittens Earned: {this.state.kittensEarned}</h2>
+            </section>
             {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()};
             </div>
             );         
