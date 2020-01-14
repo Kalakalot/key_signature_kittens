@@ -109,7 +109,6 @@ class App extends Component {
       }
   }
 
-  // this is not currently doing anything and I don't know why
   renderResults() {
     return (
     <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
@@ -143,7 +142,6 @@ class App extends Component {
         questionTotal={quizData.length}
         onAnswerSelected={this.handleAnswerSelected}
       />
-        {/* <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/> */}
         </>
     );
   }
@@ -155,13 +153,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(`You got ${this.state.answersCount.correct} out of ${quizData.length} questions right`)
-
-
-    // this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz();
-
-    console.log(`answers provided: ${this.state.answersCount.correct + this.state.answersCount.incorrect}`)
-    console.log(`total questions: ${quizData.length}`)
 
     return (
       <div className="App">
