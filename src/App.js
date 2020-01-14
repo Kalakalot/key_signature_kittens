@@ -18,6 +18,7 @@ class App extends Component {
       counter: 0,
       questionId: 1, 
       question: '',
+      alt: '',
       answerOptions: [],
       answer: '',
       answersCount: {
@@ -31,10 +32,11 @@ class App extends Component {
   }
 
   // lifecycle-based mapping of quiz answer options code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const shuffledAnswerOptions = quizData.map((question) => this.shuffleArray(question.answers));  
     this.setState({
       question: quizData[0].question,
+      alt: quizData[0].alt,
       answerOptions: shuffledAnswerOptions[0]
     });
   }
@@ -142,9 +144,11 @@ class App extends Component {
   //   );
   // }
 
+
   render() {
 
-
+console.log(this.state.question)
+console.log(this.state.alt)
     // {this.state.result ? this.renderResult() : this.renderQuiz()};
 
     return (
@@ -159,6 +163,7 @@ class App extends Component {
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
         question={this.state.question}
+        alt={this.state.alt}
         questionTotal={quizData.length}
         onAnswerSelected={this.handleAnswerSelected}
       />

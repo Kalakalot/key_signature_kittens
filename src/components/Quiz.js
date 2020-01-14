@@ -19,8 +19,6 @@ const Quiz = (props) => {
     );
   }
 
-console.log(props.question)
-
   return (
     <div className="quiz">
       <QuestionCount
@@ -38,6 +36,7 @@ console.log(props.question)
 export default Quiz;
 
 Quiz.propTypes = {
+  alt: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
   answerOptions: PropTypes.array.isRequired,
   counter: PropTypes.number.isRequired,

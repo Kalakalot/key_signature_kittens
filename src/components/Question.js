@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
   function Question(props) {
-
-  console.log(props.question)
     
     return (
       <div>
