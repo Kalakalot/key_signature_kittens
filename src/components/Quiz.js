@@ -25,10 +25,12 @@ const Quiz = (props) => {
         counter={props.questionId}
         total={props.questionTotal}
       />
-      <Question question={props.question} alt={props.alt}/>
-      <ul className="answerOptions">
-        {props.answerOptions.map(renderAnswerOptions)}
-      </ul>
+      <div className="questionContainer">
+        <Question question={props.question} alt={props.alt}/>
+        <ul className="answerOptions">
+          {props.answerOptions.map(renderAnswerOptions)}
+        </ul>
+      </div>
     </div>
   );
 }

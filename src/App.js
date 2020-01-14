@@ -102,6 +102,7 @@ class App extends Component {
 
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
+    // adds short pause before advancing to next question
     if (this.state.questionId < quizData.length) {
         setTimeout(() => this.setNextQuestion(), 300);
       } else {
