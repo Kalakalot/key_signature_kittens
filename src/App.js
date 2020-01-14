@@ -147,8 +147,6 @@ class App extends Component {
 
   render() {
 
-console.log(this.state.question)
-console.log(this.state.alt)
     // {this.state.result ? this.renderResult() : this.renderQuiz()};
 
     return (
@@ -175,5 +173,17 @@ console.log(this.state.alt)
 export default App;
 
 App.propTypes = {
-
+      // quizResult: React.PropTypes.string.isRequired,
+  counter: PropTypes.number.isRequired,
+  questionId: PropTypes.number.isRequired,
+  question: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  answerOptions: PropTypes.array.isRequired,
+  answer: PropTypes.string.isRequired,
+  answersCount: PropTypes.shape ({
+    correct: PropTypes.number.isRequired,
+    incorrect: PropTypes.number.isRequired,
+  }),
+  kittensEarned: PropTypes.number.isRequired,
+  result: PropTypes.string.isRequired,
 }
