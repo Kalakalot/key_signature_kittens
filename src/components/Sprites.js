@@ -15,6 +15,7 @@ const Sprites = () => {
       fps={3}
       loop={true}
       autoplay={true}
+      startAt={1}
     />
       <Spritesheet
       className={`cat-walking__white--right`}
@@ -43,14 +44,3 @@ const Sprites = () => {
 }
 
 export default Sprites;
-
-Sprites.propTypes = {
-  image: PropTypes.string.isRequired,
-  widthFrame: PropTypes.number.isRequired, 
-  heightFrame: PropTypes.number.isRequired,
-  steps: PropTypes.number.isRequired,
-  fps: PropTypes.number.isRequired,
-  loop: PropTypes.bool.isRequired,
-  autoplay: PropTypes.bool.isRequired,
-  startAt: PropTypes.number.isRequired,
-}
