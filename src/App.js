@@ -127,9 +127,9 @@ class App extends Component {
         }
     // adds short pause before advancing to next question or results
     if (this.state.questionId < quizData.length) {
-      setTimeout(() => this.setNextQuestion(), 300);
+      setTimeout(() => this.setNextQuestion(), 500);
     } else {
-      setTimeout(() => this.renderResults(), 300);
+      setTimeout(() => this.renderResults(), 500);
     }
   }
   
