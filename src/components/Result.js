@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
         <p>
         You got <strong>{props.correctAnswers}</strong> out of {props.totalQuestions} right!
         </p>
+        <button onClick={() => window.location.reload(false)}>Take the quiz again</button>
       </div>
     );
   }
