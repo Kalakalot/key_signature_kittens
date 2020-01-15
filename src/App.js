@@ -5,6 +5,7 @@ import axios from 'axios';
 import Sprites from './components/Sprites';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
+import AnswerExplanation from './components/AnswerExplanation';
 import update from 'react-addons-update';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
         incorrect: 0,
       },
       kittensEarned: 0,
+      answerExplanation: '',
     };
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
@@ -37,12 +39,14 @@ class App extends Component {
       question: quizData[0].question,
       alt: quizData[0].alt,
       kittenValue: quizData[0].kitten_value,
+      answerExplanation: quizData[0].answer_explanation,
       answerOptions: shuffledAnswerOptions[0],
       // question: shuffledQuestions[0].question,
       // alt: shuffledQuestions[0].alt,
       // kittenValue: shuffledQuestions[0].kitten_value,
     });
   }
+
   
   // componentDidMount() {
   //   const shuffledQuestions = quizData.map((question) => this.shuffle(question));  
@@ -113,18 +117,27 @@ class App extends Component {
       answerOptions: quizData[counter].answers,
       alt: quizData[counter].alt,
       kittenValue: quizData[counter].kitten_value,
-      answer: ''
+      answer: '',
+      answerExplanation: quizData[counter].answer_explanation,
     });
   }
   
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
+
+
+    // console.log(this.state.answerExplanation)
+
     // add kitten value if answer is correct
     if (event.currentTarget.value === "correct") {
       this.setState({
         kittensEarned: (Number(this.state.kittensEarned) + Number(this.state.kittenValue))
           })
-        }
+      } else {
+        // show answer_explanation_url and answer_explanation
+        // <AnswerExplanation explanation={this.state.answerExplanation}/>
+      }
+    
     // adds short pause before advancing to next question or results
     if (this.state.questionId < quizData.length) {
       setTimeout(() => this.setNextQuestion(), 500);
@@ -157,7 +170,7 @@ class App extends Component {
     }
               
     render() {
-      console.log(quizData.map((question) => this.shuffle(question.answers))); 
+      console.log(`this.state.answerExplanation: ${this.state.answerExplanation}`);
       console.log(`this.state.kittenValue: ${this.state.kittenValue}`);
       console.log(`this.state.kittensEarned: ${this.state.kittensEarned}`);
       
