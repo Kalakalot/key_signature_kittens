@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-  function Result(props) {
+  const Result = (props) => {
     return (
       <div className="result">
+        <p>
         You got <strong>{props.correctAnswers}</strong> out of {props.totalQuestions} right!
+        </p>
       </div>
     );
   }

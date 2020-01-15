@@ -133,9 +133,6 @@ class App extends Component {
       this.setState({
         kittensEarned: (Number(this.state.kittensEarned) + Number(this.state.kittenValue))
           })
-      } else {
-        // show answer_explanation_url and answer_explanation
-        // <AnswerExplanation explanation={this.state.answerExplanation}/>
       }
     
     // adds short pause before advancing to next question or results
@@ -165,6 +162,7 @@ class App extends Component {
       questionTotal={quizData.length}
       onAnswerSelected={this.handleAnswerSelected}
       />
+      <AnswerExplanation explation={this.state.answerExplanation} />
       </>
       );
     }
