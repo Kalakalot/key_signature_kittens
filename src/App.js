@@ -28,9 +28,9 @@ class App extends Component {
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
   
-  // lifecycle-based mapping of quiz answer options code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6
   componentDidMount() {
-    const shuffledAnswerOptions = quizData.map((question) => this.shuffleArray(question.answers));  
+    const shuffledAnswerOptions = quizData.map((question) => this.shuffle(question.answers));  
+    
     // const shuffledQuestions = quizData.map((question) => this.shuffleArray(question));  
     this.setState({
       question: quizData[0].question,
@@ -43,21 +43,38 @@ class App extends Component {
     });
   }
   
-  // shuffle code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6 (may not be original source; I\'ve seen this exact code including notes elsewhere)
-  shuffleArray(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
+
+  // shuffleArray(array) {
+  //   let currentIndex = array.length, temporaryValue, randomIndex;
+  //   // While there remain elements to shuffle...
+  //   while (0 !== currentIndex) {
+  //     // Pick a remaining element...
+  //     randomIndex = Math.floor(Math.random() * currentIndex);
+  //     currentIndex -= 1;
+  //     // And swap it with the current element.
+  //     temporaryValue = array[currentIndex];
+  //     array[currentIndex] = array[randomIndex];
+  //     array[randomIndex] = temporaryValue;
+  //   }
+  //   return array;
+  // };
+
+    // shuffle code based on Fisher-Yates-Durstenfeld algorithm https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
+  shuffle(object) {
+    let currentIndex = object.length, temporaryValue, randomIndex;
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
       // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
+      temporaryValue = object[currentIndex];
+      object[currentIndex] = object[randomIndex];
+      object[randomIndex] = temporaryValue;
     }
-    return array;
+    return object;
   };
+
   
   // Code used to pull data from external MongoDB database
   
