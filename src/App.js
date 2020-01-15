@@ -30,6 +30,8 @@ class App extends Component {
     };
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
+
+  
   
   componentDidMount() {
     const shuffledAnswerOptions = quizData.map((question) => this.shuffle(question.answers));  
@@ -121,34 +123,59 @@ class App extends Component {
       alt: quizData[counter].alt,
       kittenValue: quizData[counter].kitten_value,
       answer: '',
-      answerExplanation: quizData[counter].answer_explanation,
-      answerURL: quizData[counter].explanation_url,
+      answerExplanation: quizData[Number(counter) - 1].answer_explanation,
+      answerURL: quizData[Number(counter) - 1].explanation_url,
     });
+  }
+
+  showAnswerExplanation() {
+    
   }
   
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
-
     // add kitten value if answer is correct
     if (event.currentTarget.value === "correct") {
       this.setState({
         kittensEarned: (Number(this.state.kittensEarned) + Number(this.state.kittenValue))
-          })
+          })}
+      // } else {
+      //   // show answer explanation?
+      // }
+
+    // WORKING CODE adds short pause before advancing to next question or results
+  //   if (this.state.questionId < quizData.length) {
+  //     setTimeout(() => this.setNextQuestion(), 500);
+  //   } else {
+  //     setTimeout(() => this.renderResults(), 500);
+  //   }
+  // }
+
+    if ((this.state.questionId < quizData.length) && (event.currentTarget.value === "correct")) {
+        setTimeout(() => this.setNextQuestion(), 500);
+      } else if ((this.state.questionId < quizData.length) && (event.currentTarget.value === "incorrect")) {
+        setTimeout(() => this.showAnwerExplanation(), 1000);
+        setTimeout(() => this.setNextQuestion(), 5000);
       }
-    
-    // adds short pause before advancing to next question or results
-    if (this.state.questionId < quizData.length) {
-      setTimeout(() => this.setNextQuestion(), 500);
-    } else {
-      setTimeout(() => this.renderResults(), 500);
-    }
+      // } else if (condition) {
+      //   setTimeout(() => this.renderResults(), 500);
+      //   // another thing ;
+      // } else if (condition) {
+      //   setTimeout(() => this.renderResults(), 500);
+        
+  }
+
+  showAnwerExplanation() {
+    return (
+      <AnswerExplanation explanation={this.state.answerExplanation} image={this.state.answerURL}/>
+    );
   }
   
   renderResults() {
     return (
       <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
-      );
-    }
+    );
+  }
   
   renderQuiz() {
     return (
@@ -163,10 +190,10 @@ class App extends Component {
       questionTotal={quizData.length}
       onAnswerSelected={this.handleAnswerSelected}
       />
-      <AnswerExplanation explanation={this.state.answerExplanation} image={this.state.answerURL}/>
+      {/* <AnswerExplanation explanation={this.state.answerExplanation} image={this.state.answerURL}/> */}
       </>
       );
-    }
+  }
               
     render() {
       console.log(`this.state.answerExplanation: ${this.state.answerExplanation}`);

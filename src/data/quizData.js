@@ -28,7 +28,7 @@ const quizData =
       ""
     ],
     "answer_explanation": "C major is the only major key with no accidentals. You \"C\" no sharps or flats here!",
-    "explanation_url": "",
+    "explanation_url": "https://placebear.com/300/300",
     "question": "https://lh3.googleusercontent.com/bwDmcgD4YDYzKJstp1qYHFDWsqtR4K2SN9clK5B-Mc7v3zM6oXvAviCA7AODILxfwgQ9be2z6ZY9nwetu0SteBSyrBN44PXE6PcVyiLI4Jtl9wXMbJJjhNApjCYO_fPbcu7ElPJWv-ca1fcOnmH6sdjjlPklb1OhYPQdTEEmQWJtjbUXnJip0hmHs0rTEUw_Hwe7TY15Evz5SzAebSlmioLuBICEG_btcpWIT-_hYKy_TyoMfTiMCmxJi8yT5td-WIb_Bwx-0LIymGUMoJXKsbNm6g4Tt40g9hejmso4bS0NOVPaWtF4DF5evXIBbWUllrlhIhkEg0eRplVgMdtsfUi4NLeLSuPrk9tznHBILaFMA5MB8CJDsTKtKqNBhWCQ1Fg8N0ggw3yxsNP5K5ujyMOgnN2F0j4YAn9QdmdZ0ZKFWVL2j0J2P6bexg0JWciE9uDnwer5BcmiUqvtH0Q6htSB3oNx_ZDDN0gGjY7zrOm5fCkWQZKANq5v6Q9DBL9u1ZxdWQbvwI3bGd60pn6spgsjryX4ejAGKXtVwoOaCGvGbxqmrUnfZFBi_GxZCMZI2FGUcZ4Ntiz6p0jJrRhSUdxndB31dTKIMI2lriX78Wf9GVG5fhbOrilNMKw5I2PkpeahJjPDqpY6ZJuLEtGXlnFH6w8wMkYqBcrAQVUXZZ_X-Y-QQOwT0w=w298-h436-no",
     "bass_url": "",
     "alt": "Key signature with no sharps or flats"
@@ -93,7 +93,7 @@ const quizData =
     "kitten_value": "120",
     "accidentals": "F sharp",
     "answer_explanation": "You can determine the key signature of a major key with sharps by going a half step up from the last sharp. A half step up from F sharp is G, which makes this G major.",
-    "explanation_url": "",
+    "explanation_url": "https://placebear.com/300/300",
     "question": "https://lh3.googleusercontent.com/B6KCZzCsuM9TsSmTP_CCrv3TdHHqCzaDtHDff_fZRLfyN_rh_b9Pb6AlVL8wguf9Bputks0w9JB41k3K0Q-eGwWg5aWz-dXnJaCVQYoPfUXmxAh5qdRvGKF6t380jM9PEo62J5JoowpnskAyZv0WCV8Sr1j3ZBsmo2Kgqw9ix3iW_Q8ruYEvtW50lggNYtBAjuxZ8_zVlgsQj9mwMbIdI8rkV0iSyVNBklTT33DieiWKVMX5GKZxjevMCTCzm8zpgwFgjKhmaWmW7BT0vNaAvVSolvCP-LV0RNOdLBesvuzi-wYHEioLpJU2Tc3Lraz6D0jq8vykJIDNtKpSHrKGeEaDglWW40IzQfXJfDkMsQfYqE6j73Fy5uhneKthZX3L0YPUBHyYD0srNLn9wSioUieI_JuftVdNjdO9NF-gur4Lv0z9pFX84IddSzbTX54PTq0HPql9IuWz7QL-tP_gzKrX1TJIyA02bytHC5Rv2Df6up3qUqy4dJ3M5DT19aOB41I26kIjeD5Z1HGa5mLybsIvb3NvKi3qwSx917rlo-hN7SMqo8GjISWwUACw7xCIB9ojlqrvFVoZJs15u-XbUb4yHWDININZS_ryPtH8ZmFo7_mOVv9Bo9GkJN9gHcObsoTbYu7YtQJcjmrfu3MIeGdPvVd26Boc6FzkrxQ-ElM7Bg8ROOlrFA=w338-h436-no",
     "bass_url": "",
     "alt": "Key signature with one sharp: F sharp."
