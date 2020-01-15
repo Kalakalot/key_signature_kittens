@@ -39,7 +39,7 @@ const Quiz = (props) => {
     component="div"
     transitionName="fade"
     transitionEnterTimeout={800}
-    transitionLeaveTimeout={5000}
+    transitionLeaveTimeout={500}
     transitionAppear
     transitionAppearTimeout={500}
   >

@@ -190,6 +190,11 @@ class App extends Component {
         <section className="kittens_earned">
           <h2 className="score">Kittens Earned: {this.state.kittensEarned}</h2>
         </section>
+
+        {/* display answer explananation popup for second question and beyond */}
+        <div> 
+        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }    
+
         {this.state.showPopup ?  
         <Popup 
           explanation={this.state.answerExplanation} 
@@ -201,9 +206,9 @@ class App extends Component {
         {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
         </div>
 
-        {/* display answer explananation popup for second question and beyond */}
+        {/* display answer explananation popup for second question and beyond
         <div> 
-        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }    
+        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }     */}
 
         {/* {this.state.showPopup ?  
         <Popup 
