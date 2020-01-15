@@ -133,6 +133,7 @@ class App extends Component {
       this.setState({
         kittensEarned: (Number(this.state.kittensEarned) + Number(this.state.kittenValue))
           })
+        }
 
     // adds short pause before advancing to next question or results
       if (this.state.questionId < quizData.length) {
@@ -141,7 +142,7 @@ class App extends Component {
         setTimeout(() => this.renderResults(), 500);
       }
     }   
-  }
+  
   
   renderResults() {
     return (
@@ -174,8 +175,8 @@ class App extends Component {
     });  }
               
     render() {
-      console.log(`this.state.answerExplanation: ${this.state.answerExplanation}`);
-      console.log(`this.state.answerURL: ${this.state.answerURL}`);
+      // console.log(`this.state.answerExplanation: ${this.state.answerExplanation}`);
+      // console.log(`this.state.answerURL: ${this.state.answerURL}`);
       
       return (
         <>
@@ -189,13 +190,6 @@ class App extends Component {
         <section className="kittens_earned">
           <h2 className="score">Kittens Earned: {this.state.kittensEarned}</h2>
         </section>
-        {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
-        </div>
-
-        {/* display answer explananation popup for second question and beyond */}
-        <div> 
-        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }    
-
         {this.state.showPopup ?  
         <Popup 
           explanation={this.state.answerExplanation} 
@@ -204,6 +198,21 @@ class App extends Component {
         />  
         : null  
         }  
+        {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
+        </div>
+
+        {/* display answer explananation popup for second question and beyond */}
+        <div> 
+        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }    
+
+        {/* {this.state.showPopup ?  
+        <Popup 
+          explanation={this.state.answerExplanation} 
+          image={this.state.answerURL}  
+          closePopup={this.togglePopup.bind(this)}  
+        />  
+        : null  
+        }   */}
         </div>  
         </>
         );         
