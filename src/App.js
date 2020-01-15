@@ -6,6 +6,7 @@ import Sprites from './components/Sprites';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import AnswerExplanation from './components/AnswerExplanation';
+import Popup from './components/Popup';  
 import update from 'react-addons-update';
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
       kittensEarned: 0,
       answerExplanation: '',
       answerURL: '',
+      showPopup: false,
     };
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
@@ -127,10 +129,6 @@ class App extends Component {
       answerURL: quizData[Number(counter) - 1].explanation_url,
     });
   }
-
-  showAnswerExplanation() {
-    
-  }
   
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
@@ -155,7 +153,7 @@ class App extends Component {
         setTimeout(() => this.setNextQuestion(), 500);
       } else if ((this.state.questionId < quizData.length) && (event.currentTarget.value === "incorrect")) {
         setTimeout(() => this.showAnwerExplanation(), 1000);
-        setTimeout(() => this.setNextQuestion(), 5000);
+        // setTimeout(() => this.setNextQuestion(), 5000);
       }
       // } else if (condition) {
       //   setTimeout(() => this.renderResults(), 500);
@@ -194,12 +192,19 @@ class App extends Component {
       </>
       );
   }
+
+  // popup code and basic styling gratefully adapted from https://dev.to/skptricks/create-simple-popup-example-in-react-application-5g7f
+  togglePopup() {  
+    this.setState({  
+      showPopup: !this.state.showPopup  
+    });  }
               
     render() {
       console.log(`this.state.answerExplanation: ${this.state.answerExplanation}`);
       console.log(`this.state.answerURL: ${this.state.answerURL}`);
       
       return (
+        <>
         <div className="App">
         <div className="App-header">
         <h1>key signature kittens</h1>
@@ -212,8 +217,23 @@ class App extends Component {
         </section>
         {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
         </div>
+
+        <div>  
+        <button onClick={this.togglePopup.bind(this)}> Click To See Answer Explanation</button>  
+
+        {this.state.showPopup ?  
+        <Popup  
+          text='Click "Close Button" to hide popup'  
+          closePopup={this.togglePopup.bind(this)}  
+        />  
+        : null  
+        }  
+        </div>  
+        </>
+
         );         
       }; 
+      
     }
       
 export default App;
