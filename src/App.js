@@ -5,8 +5,7 @@ import axios from 'axios';
 import Sprites from './components/Sprites';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
-import AnswerExplanation from './components/AnswerExplanation';
-import Popup from './components/Popup';  
+import Popup from './components/AnswerExplanationPopup';  
 import update from 'react-addons-update';
 
 class App extends Component {
@@ -195,20 +194,18 @@ class App extends Component {
 
         {/* display answer explananation popup for second question and beyond */}
         <div> 
-        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> Click To See Previous Question's Answer Explanation</button> : null }    
+        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }    
 
         {this.state.showPopup ?  
         <Popup 
           explanation={this.state.answerExplanation} 
           image={this.state.answerURL}  
-          text="Here is a popup"
           closePopup={this.togglePopup.bind(this)}  
         />  
         : null  
         }  
         </div>  
         </>
-
         );         
       }; 
       
