@@ -33,8 +33,6 @@ class App extends Component {
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
 
-  
-  
   componentDidMount() {
     const shuffledAnswerOptions = quizData.map((question) => this.shuffle(question.answers));  
     
@@ -51,7 +49,6 @@ class App extends Component {
       // alt: shuffledQuestions[0].alt,
       // kittenValue: shuffledQuestions[0].kitten_value,
     });
-    console.log(`answer url: ${this.state.answerURL}`)
   }
 
   
@@ -136,31 +133,15 @@ class App extends Component {
     if (event.currentTarget.value === "correct") {
       this.setState({
         kittensEarned: (Number(this.state.kittensEarned) + Number(this.state.kittenValue))
-          })}
-      // } else {
-      //   // show answer explanation?
-      // }
+          })
 
-    // WORKING CODE adds short pause before advancing to next question or results
-  //   if (this.state.questionId < quizData.length) {
-  //     setTimeout(() => this.setNextQuestion(), 500);
-  //   } else {
-  //     setTimeout(() => this.renderResults(), 500);
-  //   }
-  // }
-
-    if ((this.state.questionId < quizData.length) && (event.currentTarget.value === "correct")) {
+    // adds short pause before advancing to next question or results
+      if (this.state.questionId < quizData.length) {
         setTimeout(() => this.setNextQuestion(), 500);
-      } else if ((this.state.questionId < quizData.length) && (event.currentTarget.value === "incorrect")) {
-        setTimeout(() => this.showAnwerExplanation(), 1000);
-        // setTimeout(() => this.setNextQuestion(), 5000);
+      } else {
+        setTimeout(() => this.renderResults(), 500);
       }
-      // } else if (condition) {
-      //   setTimeout(() => this.renderResults(), 500);
-      //   // another thing ;
-      // } else if (condition) {
-      //   setTimeout(() => this.renderResults(), 500);
-        
+    }   
   }
 
   showAnwerExplanation() {
@@ -188,7 +169,7 @@ class App extends Component {
       questionTotal={quizData.length}
       onAnswerSelected={this.handleAnswerSelected}
       />
-      {/* <AnswerExplanation explanation={this.state.answerExplanation} image={this.state.answerURL}/> */}
+      <AnswerExplanation explanation={this.state.answerExplanation} image={this.state.answerURL}/>
       </>
       );
   }
@@ -218,12 +199,12 @@ class App extends Component {
         {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
         </div>
 
-        <div>  
-        <button onClick={this.togglePopup.bind(this)}> Click To See Answer Explanation</button>  
+        <div> 
+        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> Click To See Previous Question's Answer Explanation</button> : null }    
 
         {this.state.showPopup ?  
         <Popup  
-          text='Click "Close Button" to hide popup'  
+          text='Click "Back to Quiz" to hide popup'  
           closePopup={this.togglePopup.bind(this)}  
         />  
         : null  
