@@ -31,33 +31,29 @@ class App extends Component {
   componentDidMount() {
     const shuffledAnswerOptions = quizData.map((question) => this.shuffle(question.answers));  
     
-    // const shuffledQuestions = quizData.map((question) => this.shuffleArray(question));  
+    // const shuffledQuestions = quizData.map((question) => this.shuffle(question));  
+
     this.setState({
       question: quizData[0].question,
       alt: quizData[0].alt,
+      kittenValue: quizData[0].kitten_value,
       answerOptions: shuffledAnswerOptions[0],
-      kittenValue: quizData[0].kitten_value
       // question: shuffledQuestions[0].question,
       // alt: shuffledQuestions[0].alt,
       // kittenValue: shuffledQuestions[0].kitten_value,
     });
   }
   
+  // componentDidMount() {
+  //   const shuffledQuestions = quizData.map((question) => this.shuffle(question));  
 
-  // shuffleArray(array) {
-  //   let currentIndex = array.length, temporaryValue, randomIndex;
-  //   // While there remain elements to shuffle...
-  //   while (0 !== currentIndex) {
-  //     // Pick a remaining element...
-  //     randomIndex = Math.floor(Math.random() * currentIndex);
-  //     currentIndex -= 1;
-  //     // And swap it with the current element.
-  //     temporaryValue = array[currentIndex];
-  //     array[currentIndex] = array[randomIndex];
-  //     array[randomIndex] = temporaryValue;
-  //   }
-  //   return array;
-  // };
+  //   this.setState({
+  //     question: shuffledQuestions[0].question,
+  //     alt: shuffledQuestions[0].alt,
+  //     kittenValue: shuffledQuestions[0].kitten_value,
+  //   });
+  // }
+
 
     // shuffle code based on Fisher-Yates-Durstenfeld algorithm https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
   shuffle(object) {
@@ -143,49 +139,43 @@ class App extends Component {
       );
     }
   
-    renderQuiz() {
-      return (
-        <>
-        <Quiz
-        alt={this.state.alt}
-        answer={this.state.answer}
-        answerOptions={this.state.answerOptions}
-        kittenValue={this.state.kittenValue}
-        questionId={this.state.questionId}
-        question={this.state.question}
-        questionTotal={quizData.length}
-        onAnswerSelected={this.handleAnswerSelected}
-        />
-        </>
-        );
-      }
+  renderQuiz() {
+    return (
+      <>
+      <Quiz
+      alt={this.state.alt}
+      answer={this.state.answer}
+      answerOptions={this.state.answerOptions}
+      kittenValue={this.state.kittenValue}
+      questionId={this.state.questionId}
+      question={this.state.question}
+      questionTotal={quizData.length}
+      onAnswerSelected={this.handleAnswerSelected}
+      />
+      </>
+      );
+    }
+              
+    render() {
+      console.log(quizData.map((question) => this.shuffle(question.answers))); 
+      console.log(`this.state.kittenValue: ${this.state.kittenValue}`);
+      console.log(`this.state.kittensEarned: ${this.state.kittensEarned}`);
       
-      renderResult() {
-        return (
-          <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
-          );
-        }
+      return (
+        <div className="App">
+        <div className="App-header">
+        <h1>key signature kittens</h1>
+        <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
+        <Sprites/>
+        </div>
         
-        render() {
-          console.log(this.state.answer); 
-          console.log(`this.state.kittenValue: ${this.state.kittenValue}`);
-          console.log(`this.state.kittensEarned: ${this.state.kittensEarned}`);
-          
-          return (
-            <div className="App">
-            <div className="App-header">
-            <h1>key signature kittens</h1>
-            <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
-            <Sprites/>
-            </div>
-            
-            <section className="kittens_earned">
-              <h2 className="score">Kittens Earned: {this.state.kittensEarned}</h2>
-            </section>
-            {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()};
-            </div>
-            );         
-          }; 
-        }
-        
-        export default App;
+        <section className="kittens_earned">
+          <h2 className="score">Kittens Earned: {this.state.kittensEarned}</h2>
+        </section>
+        {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()};
+        </div>
+        );         
+      }; 
+    }
+      
+export default App;
