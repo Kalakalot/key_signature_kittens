@@ -143,12 +143,6 @@ class App extends Component {
       }
     }   
   }
-
-  showAnwerExplanation() {
-    return (
-      <AnswerExplanation explanation={this.state.answerExplanation} image={this.state.answerURL}/>
-    );
-  }
   
   renderResults() {
     return (
@@ -169,7 +163,7 @@ class App extends Component {
       questionTotal={quizData.length}
       onAnswerSelected={this.handleAnswerSelected}
       />
-      <AnswerExplanation explanation={this.state.answerExplanation} image={this.state.answerURL}/>
+      {/* <AnswerExplanation explanation={this.state.answerExplanation} image={this.state.answerURL}/> */}
       </>
       );
   }
@@ -199,12 +193,15 @@ class App extends Component {
         {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
         </div>
 
+        {/* display answer explananation popup for second question and beyond */}
         <div> 
         {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> Click To See Previous Question's Answer Explanation</button> : null }    
 
         {this.state.showPopup ?  
-        <Popup  
-          text='Click "Back to Quiz" to hide popup'  
+        <Popup 
+          explanation={this.state.answerExplanation} 
+          image={this.state.answerURL}  
+          text="Here is a popup"
           closePopup={this.togglePopup.bind(this)}  
         />  
         : null  

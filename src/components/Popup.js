@@ -7,8 +7,9 @@ class Popup extends Component {
 
 return (  
 <div className='popup'>  
-<div className='popup\_inner'>  
-<h1>{this.props.text}</h1>  
+<div className='popup\_inner'>   
+<p className='explanation_text'>{this.props.explanation}</p>
+<img src={this.props.image}/>
 <button onClick={this.props.closePopup}>Back to Quiz</button>  
 </div>  
 </div>  
