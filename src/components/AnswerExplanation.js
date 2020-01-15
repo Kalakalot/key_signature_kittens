@@ -8,10 +8,15 @@ const AnswerExplanation = (props) => {
       <p> {props.explanation} </p>
     </div>
     <div className="explanation_image">
-    <img src={props.image}/>
+    <img src={props.image} alt="diagram of key signature"/>
     </div>
     </section>
     );
   }
 
 export default AnswerExplanation;
+
+AnswerExplanation.propTypes = {
+  explanation: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+}
