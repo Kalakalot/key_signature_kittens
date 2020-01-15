@@ -26,6 +26,7 @@ class App extends Component {
       },
       kittensEarned: 0,
       answerExplanation: '',
+      answerURL: '',
     };
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
@@ -40,11 +41,13 @@ class App extends Component {
       alt: quizData[0].alt,
       kittenValue: quizData[0].kitten_value,
       answerExplanation: quizData[0].answer_explanation,
+      answerURL: quizData[0].explanation_url,
       answerOptions: shuffledAnswerOptions[0],
       // question: shuffledQuestions[0].question,
       // alt: shuffledQuestions[0].alt,
       // kittenValue: shuffledQuestions[0].kitten_value,
     });
+    console.log(`answer url: ${this.state.answerURL}`)
   }
 
   
@@ -119,14 +122,12 @@ class App extends Component {
       kittenValue: quizData[counter].kitten_value,
       answer: '',
       answerExplanation: quizData[counter].answer_explanation,
+      answerURL: quizData[counter].explanation_url,
     });
   }
   
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
-
-
-    // console.log(this.state.answerExplanation)
 
     // add kitten value if answer is correct
     if (event.currentTarget.value === "correct") {
@@ -162,15 +163,14 @@ class App extends Component {
       questionTotal={quizData.length}
       onAnswerSelected={this.handleAnswerSelected}
       />
-      <AnswerExplanation explation={this.state.answerExplanation} />
+      <AnswerExplanation explanation={this.state.answerExplanation} image={this.state.answerURL}/>
       </>
       );
     }
               
     render() {
       console.log(`this.state.answerExplanation: ${this.state.answerExplanation}`);
-      console.log(`this.state.kittenValue: ${this.state.kittenValue}`);
-      console.log(`this.state.kittensEarned: ${this.state.kittensEarned}`);
+      console.log(`this.state.answerURL: ${this.state.answerURL}`);
       
       return (
         <div className="App">
@@ -183,7 +183,7 @@ class App extends Component {
         <section className="kittens_earned">
           <h2 className="score">Kittens Earned: {this.state.kittensEarned}</h2>
         </section>
-        {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()};
+        {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
         </div>
         );         
       }; 

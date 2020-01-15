@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 const AnswerExplanation = (props) => {
   return (
-    <div>
-      <p>Here's the explanation: {props.explanation}</p>
+    <section className="explanation_container">
+    <div className="explanation">
+      <p> {props.explanation} </p>
     </div>
-    // <div className="explanation">
-    //   You got <strong>{props.explanation}</strong> out of right!
-    // </div>
+    <div className="explanation_image">
+    <img src={props.image}/>
+    </div>
+    </section>
     );
   }
 
