@@ -20,6 +20,7 @@ const Quiz = (props) => {
     );
   }
 
+
   return (
     <>
     {/* <div className="quiz">
