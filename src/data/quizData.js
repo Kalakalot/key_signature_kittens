@@ -1,4 +1,4 @@
-let quizData = 
+const quizData = 
 [
   {
     "_id": {

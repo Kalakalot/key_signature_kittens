@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import quizData from './components/quizData'
+import quizData from './data/quizData'
 import './App.css';
 import axios from 'axios';
 import Sprites from './components/Sprites';
@@ -29,13 +29,17 @@ class App extends Component {
   }
   
   // lifecycle-based mapping of quiz answer options code from https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     const shuffledAnswerOptions = quizData.map((question) => this.shuffleArray(question.answers));  
+    // const shuffledQuestions = quizData.map((question) => this.shuffleArray(question));  
     this.setState({
       question: quizData[0].question,
       alt: quizData[0].alt,
       answerOptions: shuffledAnswerOptions[0],
       kittenValue: quizData[0].kitten_value
+      // question: shuffledQuestions[0].question,
+      // alt: shuffledQuestions[0].alt,
+      // kittenValue: shuffledQuestions[0].kitten_value,
     });
   }
   
