@@ -112,6 +112,19 @@ class App extends Component {
   setNextQuestion() {
     const counter = this.state.counter + 1;
     const questionId = this.state.questionId + 1;
+
+    // ensures user can see correct answer explanation for the final question
+    if (questionId < quizData.length) {
+      this.setState({
+        answerExplanation: quizData[Number(counter) - 1].answer_explanation,
+        answerURL: quizData[Number(counter) - 1].explanation_url,
+      })
+    } else {
+      this.setState({
+        answerExplanation: quizData[counter].answer_explanation,
+        answerURL: quizData[counter].explanation_url,
+      })
+    }
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
     this.setState({
       counter: counter,
@@ -121,9 +134,9 @@ class App extends Component {
       alt: quizData[counter].alt,
       kittenValue: quizData[counter].kitten_value,
       answer: '',
-      answerExplanation: quizData[Number(counter) - 1].answer_explanation,
-      answerURL: quizData[Number(counter) - 1].explanation_url,
-    });
+      // answerExplanation: quizData[Number(counter) - 1].answer_explanation,
+      // answerURL: quizData[Number(counter) - 1].explanation_url,
+      });
   }
   
   handleAnswerSelected(event) {
