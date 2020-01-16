@@ -109,11 +109,11 @@ class App extends Component {
     });
   }
   
-  setNextQuestion() {
+// NOT BEING CALLED
+  setAnswerExplanation() {
     const counter = this.state.counter + 1;
     const questionId = this.state.questionId + 1;
-
-    // an unsuccessful attempt to show correct explanation for final question
+     // an unsuccessful attempt to show correct explanation for final question
     if (questionId <= quizData.length) {
       this.setState({
         answerExplanation: quizData[Number(counter) - 1].answer_explanation,
@@ -127,6 +127,11 @@ class App extends Component {
         answerURL: quizData[counter].explanation_url,
       })
     }
+  }
+
+  setNextQuestion() {
+    const counter = this.state.counter + 1;
+    const questionId = this.state.questionId + 1;
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
     this.setState({
       counter: counter,
@@ -158,8 +163,16 @@ class App extends Component {
       }
     }   
   
+  // small problem: this code causes an infinite loop
+  updateIdInResults() {
+    const questionId = quizData.length + 1;
+    this.setState ({
+      questionId: questionId,
+    })
+  }
   
   renderResults() {
+    console.log(`questionID in render: ${this.state.questionId}`)
     return (
       <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
     );
@@ -187,8 +200,6 @@ class App extends Component {
     })  }
               
     render() {
-      // console.log(`this.state.answerExplanation: ${this.state.answerExplanation}`);
-      // console.log(`this.state.answerURL: ${this.state.answerURL}`);
       
       return (
         <>
