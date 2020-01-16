@@ -29,7 +29,6 @@ class App extends Component {
       answerURL: '',
       showPopup: false,
     };
-    this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
 
   componentDidMount() {
@@ -130,38 +129,55 @@ class App extends Component {
   }
 
   setNextQuestion() {
-    const counter = this.state.counter + 1;
-    const questionId = this.state.questionId + 1;
-    this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
+    const counter = this.incrementCounterAndQuestionId();
     this.setState({
-      counter: counter,
-      questionId: questionId,
       question: quizData[counter].question,
       answerOptions: quizData[counter].answers,
       alt: quizData[counter].alt,
-      kittenValue: quizData[counter].kitten_value,
-      answer: '',
+      kittenValue: quizData[counter].kitten_value
+      });
+    this.setPreviousAnswerExplanation(counter);
+  }
+
+  setLastQustion() {
+    const counter = this.incrementCounterAndQuestionId();
+    this.setPreviousAnswerExplanation(counter);
+  }
+
+  incrementCounterAndQuestionId() {
+    const counter = this.state.counter + 1;
+    const questionId = this.state.questionId + 1;
+    this.setState({
+      counter,
+      questionId,
+      answer: ''
+    });
+    return counter;
+  }
+
+  setPreviousAnswerExplanation(counter) {
+    this.setState({
       answerExplanation: quizData[Number(counter) - 1].answer_explanation,
       answerURL: quizData[Number(counter) - 1].explanation_url,
-      });
+    });
   }
   
-  handleAnswerSelected(event) {
+  handleAnswerSelected = (event) => {
     this.setUserAnswer(event.currentTarget.value);
     // add kitten value if answer is correct
     if (event.currentTarget.value === "correct") {
       this.setState({
         kittensEarned: (Number(this.state.kittensEarned) + Number(this.state.kittenValue))
           })
-        }
+    }
 
     // add short pause before advancing to next question or results
-      if (this.state.questionId < quizData.length) {
-        setTimeout(() => this.setNextQuestion(), 500);
-      } else {
-        setTimeout(() => this.renderResults(), 500);
-      }
-    }   
+    if (this.state.questionId < quizData.length) {
+      setTimeout(() => this.setNextQuestion(), 500);
+    } else {
+      setTimeout(() => this.setLastQustion(), 500);
+    }
+  }
   
   // small problem: this code causes an infinite loop
   updateIdInResults() {
