@@ -23,7 +23,7 @@ const Quiz = (props) => {
 
   return (
     <>
-    {/* <div className="quiz">
+    <div className="quiz">
       <QuestionCount
         counter={props.questionId}
         total={props.questionTotal}
@@ -34,8 +34,8 @@ const Quiz = (props) => {
           {props.answerOptions.map(renderAnswerOptions)}
         </ul>
       </div>
-    </div> */}
-    <CSSTransitionGroup
+    </div>
+    {/* <CSSTransitionGroup
     className="container"
     component="div"
     transitionName="fade"
@@ -54,7 +54,7 @@ const Quiz = (props) => {
         {props.answerOptions.map(renderAnswerOptions)}
       </ul>
     </div>
-  </CSSTransitionGroup>
+  </CSSTransitionGroup> */}
   </>
   );
 }

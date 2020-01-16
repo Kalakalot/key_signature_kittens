@@ -113,13 +113,15 @@ class App extends Component {
     const counter = this.state.counter + 1;
     const questionId = this.state.questionId + 1;
 
-    // ensures user can see correct answer explanation for the final question
-    if (questionId < quizData.length) {
+    // an unsuccessful attempt to show correct explanation for final question
+    if (questionId <= quizData.length) {
       this.setState({
         answerExplanation: quizData[Number(counter) - 1].answer_explanation,
         answerURL: quizData[Number(counter) - 1].explanation_url,
       })
-    } else {
+      // otherwise show explanation for current question
+    } 
+    else {
       this.setState({
         answerExplanation: quizData[counter].answer_explanation,
         answerURL: quizData[counter].explanation_url,
@@ -134,8 +136,8 @@ class App extends Component {
       alt: quizData[counter].alt,
       kittenValue: quizData[counter].kitten_value,
       answer: '',
-      // answerExplanation: quizData[Number(counter) - 1].answer_explanation,
-      // answerURL: quizData[Number(counter) - 1].explanation_url,
+      answerExplanation: quizData[Number(counter) - 1].answer_explanation,
+      answerURL: quizData[Number(counter) - 1].explanation_url,
       });
   }
   
@@ -148,7 +150,7 @@ class App extends Component {
           })
         }
 
-    // adds short pause before advancing to next question or results
+    // add short pause before advancing to next question or results
       if (this.state.questionId < quizData.length) {
         setTimeout(() => this.setNextQuestion(), 500);
       } else {
@@ -202,7 +204,7 @@ class App extends Component {
         </section>
 
          {/* display answer explananation popup for second question and beyond */}
-         {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }  
+        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }  
 
         {this.state.showPopup ?  
         <Popup 
