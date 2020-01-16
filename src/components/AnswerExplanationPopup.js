@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Popup.css';  
+import './AnswerExplanationPopup.css';  
 import PropTypes from 'prop-types';
 
 class AnswerExplanationPopup extends Component {  

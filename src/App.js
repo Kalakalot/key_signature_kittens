@@ -152,7 +152,6 @@ class App extends Component {
   
   renderQuiz() {
     return (
-      <>
       <Quiz
       alt={this.state.alt}
       answer={this.state.answer}
@@ -163,16 +162,14 @@ class App extends Component {
       questionTotal={quizData.length}
       onAnswerSelected={this.handleAnswerSelected}
       />
-      {/* <AnswerExplanation explanation={this.state.answerExplanation} image={this.state.answerURL}/> */}
-      </>
       );
   }
 
-  // popup code and basic styling gratefully adapted from https://dev.to/skptricks/create-simple-popup-example-in-react-application-5g7f
+  /* popup code and basic styling gratefully adapted from https://dev.to/skptricks/create-simple-popup-example-in-react-application-5g7f */
   togglePopup() {  
     this.setState({  
       showPopup: !this.state.showPopup  
-    });  }
+    })  }
               
     render() {
       // console.log(`this.state.answerExplanation: ${this.state.answerExplanation}`);
@@ -191,9 +188,8 @@ class App extends Component {
           <h2 className="score">Kittens Earned: {this.state.kittensEarned}</h2>
         </section>
 
-        {/* display answer explananation popup for second question and beyond */}
-        <div> 
-        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }    
+         {/* display answer explananation popup for second question and beyond */}
+         {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }  
 
         {this.state.showPopup ?  
         <Popup 
@@ -204,20 +200,7 @@ class App extends Component {
         : null  
         }  
         {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
-        </div>
 
-        {/* display answer explananation popup for second question and beyond
-        <div> 
-        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }     */}
-
-        {/* {this.state.showPopup ?  
-        <Popup 
-          explanation={this.state.answerExplanation} 
-          image={this.state.answerURL}  
-          closePopup={this.togglePopup.bind(this)}  
-        />  
-        : null  
-        }   */}
         </div>  
         </>
         );         
