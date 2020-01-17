@@ -8,6 +8,7 @@ import Result from './components/Result';
 import Popup from './components/AnswerExplanationPopup';  
 import update from 'react-addons-update';
 
+// structure based on Mitch Gavin's "Create a quiz with React" tutorial: https://mitchgavan.com/react-quiz/
 class App extends Component {
   
   constructor(props) {
@@ -61,7 +62,6 @@ class App extends Component {
     return object;
   };
 
-  
   // Code used to pull data from external MongoDB database
   
   // componentDidMount() {
@@ -92,26 +92,6 @@ class App extends Component {
     });
   }
   
-// NOT BEING CALLED
-  setAnswerExplanation() {
-    const counter = this.state.counter + 1;
-    const questionId = this.state.questionId + 1;
-     // an unsuccessful attempt to show correct explanation for final question
-    if (questionId <= quizData.length) {
-      this.setState({
-        answerExplanation: quizData[Number(counter) - 1].answer_explanation,
-        answerURL: quizData[Number(counter) - 1].explanation_url,
-      })
-      // otherwise show explanation for current question
-    } 
-    else {
-      this.setState({
-        answerExplanation: quizData[counter].answer_explanation,
-        answerURL: quizData[counter].explanation_url,
-      })
-    }
-  }
-
   setNextQuestion() {
     const counter = this.incrementCounterAndQuestionId();
     this.setState({
@@ -123,7 +103,8 @@ class App extends Component {
     this.setPreviousAnswerExplanation(counter);
   }
 
-  setLastQustion() {
+  // the following three functions ensure that questions 2 and beyond display an explanation for the previous question, and that the results screen displays an explanation for the final question
+  setResults() {
     const counter = this.incrementCounterAndQuestionId();
     this.setPreviousAnswerExplanation(counter);
   }
@@ -159,20 +140,11 @@ class App extends Component {
     if (this.state.questionId < quizData.length) {
       setTimeout(() => this.setNextQuestion(), 500);
     } else {
-      setTimeout(() => this.setLastQustion(), 500);
+      setTimeout(() => this.setResults(), 500);
     }
   }
-  
-  // small problem: this code causes an infinite loop
-  updateIdInResults() {
-    const questionId = quizData.length + 1;
-    this.setState ({
-      questionId: questionId,
-    })
-  }
-  
+    
   renderResults() {
-    console.log(`questionID in render: ${this.state.questionId}`)
     return (
       <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
     );
@@ -219,7 +191,7 @@ class App extends Component {
 
         {this.state.showPopup ?  
         <Popup 
-          explanation={this.state.answerExplanation} 
+          explanation={this.state.answerExplanation}
           image={this.state.answerURL}  
           closePopup={this.togglePopup.bind(this)}  
         />  
