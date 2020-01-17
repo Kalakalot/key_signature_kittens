@@ -45,25 +45,11 @@ class App extends Component {
       answerExplanation: shuffledQuestions[0].answer_explanation,
       answerURL: shuffledQuestions[0].explanation_url,
       answerOptions: shuffledAnswerOptions[0],
-      // question: quizData[0].question,
-      // alt: quizData[0].alt,
-      // kittenValue: quizData[0].kitten_value,
-      // answerExplanation: quizData[0].answer_explanation,
-      // answerURL: quizData[0].explanation_url,
-      // answerOptions: shuffledAnswerOptions[0],
     });
   }
 
   
-  // componentDidMount() {
-  //   const shuffledQuestions = quizData.map((question) => this.shuffle(question));  
 
-  //   this.setState({
-  //     question: shuffledQuestions[0].question,
-  //     alt: shuffledQuestions[0].alt,
-  //     kittenValue: shuffledQuestions[0].kitten_value,
-  //   });
-  // }
 
 
     // shuffle code based on Fisher-Yates-Durstenfeld algorithm https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
