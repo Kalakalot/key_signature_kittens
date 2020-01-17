@@ -8,7 +8,6 @@ import Result from './components/Result';
 import Popup from './components/AnswerExplanationPopup';  
 import update from 'react-addons-update';
 
-
 class App extends Component {
   
   constructor(props) {
@@ -35,8 +34,6 @@ class App extends Component {
   componentDidMount() {
     const shuffledQuestions = this.shuffle(quizData)
     const shuffledAnswerOptions = shuffledQuestions.map((question) => this.shuffle(question.answers));  
-    console.log(this.shuffle(quizData))
-    // const shuffledQuestions = quizData.map((question) => this.shuffle(question));  
 
     this.setState({
       question: shuffledQuestions[0].question,
@@ -47,10 +44,6 @@ class App extends Component {
       answerOptions: shuffledAnswerOptions[0],
     });
   }
-
-  
-
-
 
     // shuffle code based on Fisher-Yates-Durstenfeld algorithm https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
   shuffle(object) {
