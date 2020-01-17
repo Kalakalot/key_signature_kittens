@@ -33,20 +33,24 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const shuffledAnswerOptions = quizData.map((question) => this.shuffle(question.answers));  
-    
+    const shuffledQuestions = this.shuffle(quizData)
+    const shuffledAnswerOptions = shuffledQuestions.map((question) => this.shuffle(question.answers));  
+    console.log(this.shuffle(quizData))
     // const shuffledQuestions = quizData.map((question) => this.shuffle(question));  
 
     this.setState({
-      question: quizData[0].question,
-      alt: quizData[0].alt,
-      kittenValue: quizData[0].kitten_value,
-      answerExplanation: quizData[0].answer_explanation,
-      answerURL: quizData[0].explanation_url,
+      question: shuffledQuestions[0].question,
+      alt: shuffledQuestions[0].alt,
+      kittenValue: shuffledQuestions[0].kitten_value,
+      answerExplanation: shuffledQuestions[0].answer_explanation,
+      answerURL: shuffledQuestions[0].explanation_url,
       answerOptions: shuffledAnswerOptions[0],
-      // question: shuffledQuestions[0].question,
-      // alt: shuffledQuestions[0].alt,
-      // kittenValue: shuffledQuestions[0].kitten_value,
+      // question: quizData[0].question,
+      // alt: quizData[0].alt,
+      // kittenValue: quizData[0].kitten_value,
+      // answerExplanation: quizData[0].answer_explanation,
+      // answerURL: quizData[0].explanation_url,
+      // answerOptions: shuffledAnswerOptions[0],
     });
   }
 
