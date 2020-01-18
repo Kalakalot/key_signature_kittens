@@ -29,6 +29,7 @@ class App extends Component {
       answerExplanation: '',
       answerURL: '',
       showPopup: false,
+      popupButtonText: 'View answer explanation for previous question'
     };
   }
 
@@ -170,6 +171,8 @@ class App extends Component {
     this.setState({  
       showPopup: !this.state.showPopup  
     })  }
+
+  // onClick = () => this.setState({ showPopup: true })
               
     render() {
       
@@ -187,7 +190,7 @@ class App extends Component {
         </section>
 
          {/* display answer explananation popup for second question and beyond */}
-        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}> View Previous Question's Answer Explanation</button> : null }  
+        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}>View Answer Explanation for Previous Question</button> : null }  
 
         {this.state.showPopup ?  
         <Popup 
@@ -197,6 +200,7 @@ class App extends Component {
         />  
         : null  
         }  
+        
         {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
 
         </div>  

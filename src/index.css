@@ -24,8 +24,8 @@ code {
 } */
 
 .container {
-  position: relative;
-  z-index: 1;
+  /* position: relative; */
+  /* z-index: 1; */
   max-width: 800px;
   margin: 0 auto;
   background: #fff;
