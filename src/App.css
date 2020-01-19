@@ -1,33 +1,52 @@
 
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:200,300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Miriam+Libre&display=swap');
 
 .App {
   /* text-align: center; */
-  background-color:#80bdbf;
+  /* background-color:#80bdbf; */
+  background-color:#80bab6;
 }
 
 .App-header {
-  min-height: 100vh;
+  padding-top: 1em;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   font-size: 2.5em;
-  color: white;
-  line-height: 0em; 
+  margin-left: 1em;
+  margin-right: 1em;
+  text-align: center;
+}
+
+.app-title {
+  text-shadow:
+    -1px -1px 0 #183C4A,
+    1px -1px 0 #183C4A,
+    -1px 1px 0 #183C4A,
+    1px 1px 0 #183C4A,
 }
 
 h1 {
-  font-family: 'Fredoka One', cursive;
-  color: #c9e165;
-  letter-spacing: 7px;
+  font-family: 'Bungee Shade', cursive;
+
+  /* font-family: 'Fredoka One', cursive; */
+  /* color: #f7f765; */
+  /* color: #F5640A; */
+  color: #c94e02;
+
+  letter-spacing: 5px;
   font-size: 2em;
+  margin: 10px;
 }
 
 h3 {
-  font-family: 'Nunito', sans-serif;
-  color: #1d7589;
+  /* font-family: 'Nunito', sans-serif; */
+  font-family: 'Miriam Libre', sans-serif;
+
+  color: #183C4A;
   font-size: 0.75em;
   font-weight: 400;
-  letter-spacing: 2.5px;
+  letter-spacing: 3px;
+  margin: 10px;
 }

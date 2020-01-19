@@ -177,17 +177,22 @@ class App extends Component {
     render() {
       
       return (
-        <>
+        
         <div className="App">
         <div className="App-header">
-        <h1>key signature kittens</h1>
+        <element className="app-title">
+        <h1>Key Signature Kittens</h1>
+        </element>
         <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
         <Sprites/>
-        </div>
+        <div>
+
         
         <section className="kittens_earned">
           <h2 className="score">Kittens Earned: {this.state.kittensEarned}</h2>
         </section>
+
+        <section>
 
          {/* display answer explananation popup for second question and beyond */}
         {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}>View Answer Explanation for Previous Question</button> : null }  
@@ -200,11 +205,12 @@ class App extends Component {
         />  
         : null  
         }  
-        
-        {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
 
+        {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
+        </section>
         </div>  
-        </>
+        </div>
+        </div>
         );         
       }; 
       
