@@ -20,6 +20,15 @@
   cursor: pointer;
 }
 
+/* .radioCustomLabel {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem 2.5rem 1.5rem 5rem;
+  font-size: 16px;
+  line-height: 1.5;
+} */
+
 .radioCustomLabel {
   position: relative;
   width: 100%;
@@ -44,13 +53,22 @@
   transition: all 0.3s;
 }
 
-.radioCustomButton:checked ~ .radioCustomLabel:before {
+/* NOT SURE WHGAT THIS IS DOING */
+/* .radioCustomButton:checked ~ .radioCustomLabel:before {
   content: '';
-  background: #8bc53f;
+  background: #8bc53f; */
    /* no-repeat; */
-  background-size: 27px;
+  /* background-size: 27px;
   border-color: #8bc53f;
+} */
+
+/* highlighting for correct and incorrect answers */
+/* .radioCustomButton:valid .answer__item--is-correct { background-color: rgba(61, 181, 64, 0.6) } */
+.radioCustomButton:checked .answer__item--is-correct {
+  background-color: #3db540; 
 }
+
+
 
 /* Animation */
 .fade-enter {
