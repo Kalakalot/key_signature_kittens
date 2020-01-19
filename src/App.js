@@ -179,13 +179,12 @@ class App extends Component {
       return (
         
         <div className="App">
-        <div className="App-header">
-        <element className="app-title">
-        <h1>Key Signature Kittens</h1>
-        </element>
-        <h3>LEARN KEY SIGNATURES, EARN KITTENS!</h3>
-        <Sprites/>
-        <div>
+          <div className="App-header">
+            <h1>Key Signature Kittens</h1>
+            {/* <h3>Learn Key Signature, Earn Kittens!</h3> */}
+            <h3> LEARN KEY SIGNATURES, EARN KITTENS!</h3>
+            <Sprites/>
+          <div>
 
         
         <section className="kittens_earned">

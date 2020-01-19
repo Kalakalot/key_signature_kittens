@@ -6,6 +6,7 @@
   /* text-align: center; */
   /* background-color:#80bdbf; */
   background-color:#80bab6;
+  font-family: 'Miriam Libre', sans-serif;
 }
 
 .App-header {
@@ -13,28 +14,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2.5em;
+  /* font-size: 2.5em; */
   margin-left: 1em;
   margin-right: 1em;
   text-align: center;
 }
 
-.app-title {
-  text-shadow:
-    -1px -1px 0 #183C4A,
-    1px -1px 0 #183C4A,
-    -1px 1px 0 #183C4A,
-    1px 1px 0 #183C4A,
-}
-
 h1 {
   font-family: 'Bungee Shade', cursive;
-
   /* font-family: 'Fredoka One', cursive; */
   /* color: #f7f765; */
   /* color: #F5640A; */
   color: #c94e02;
-
   letter-spacing: 5px;
   font-size: 2em;
   margin: 10px;
@@ -43,7 +34,6 @@ h1 {
 h3 {
   /* font-family: 'Nunito', sans-serif; */
   font-family: 'Miriam Libre', sans-serif;
-
   color: #183C4A;
   font-size: 0.75em;
   font-weight: 400;
