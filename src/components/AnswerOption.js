@@ -15,9 +15,11 @@ import './AnswerOption.css'
           disabled={props.answer}
           onChange={props.onAnswerSelected}
         />
-        <label className="radioCustomLabel" htmlFor={props.answerType}>
+        <label className={props.answerType === "incorrect" ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel answer__item--is-correct"} htmlFor={props.answerType}>
           {props.answerContent}
         </label>
+        {console.log(props.answerType)}
+
       </li>
     );
   }
