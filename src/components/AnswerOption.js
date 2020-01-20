@@ -31,17 +31,19 @@ import './AnswerOption.css'
         <label 
 
           className={
-            (((props.answerType === props.answer) === true) 
-            
-          &&
-            
-              ((props.answerType === "correct")
-              ? "radioCustomLabel" : "radioCustomLabel answer__item--is-incorrect" ))
-            
-              ||
+            // this condition makes styling only appear after user selects an answer
+            ((props.answerType === props.answer) === false) 
+          
+          
+          ? 
+          
+          "radioCustomLabel" 
+          
+          : 
+          
+              ((props.answerType === "incorrect") ? 
 
-              ((props.answerType === "incorrect")
-              ? "radioCustomLabel" : "radioCustomLabel answer__item--is-correct" )
+              "radioCustomLabel" : "radioCustomLabel answer__item--is-correct" )
           
             }
               
