@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import './AnswerOption.css'
 
   function AnswerOption(props) {
+
+    
     return (
       <li className="answerOption">
         <input
@@ -15,10 +17,29 @@ import './AnswerOption.css'
           disabled={props.answer}
           onChange={props.onAnswerSelected}
         />
-        <label className={props.answerType === "incorrect" ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel answer__item--is-correct"} htmlFor={props.answerType}>
+        {console.log((props.answerType === props.answer)) === true? true : false}
+
+        <label 
+          className={
+            // ((props.answerType === props.answer) === true) 
+            // &&
+              (props.answerType === "incorrect")
+               ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel answer__item--is-correct"}
+          htmlFor={props.answerType}>
           {props.answerContent}
         </label>
-        {console.log(props.answerType)}
+
+        {/* SHOWS CORRECT/INCORRECT ANSWER STYLE ALWAYS */}
+        {/* <label 
+            className={props.answerType === "incorrect" ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel answer__item--is-correct"} 
+            htmlFor={props.answerType}>
+          {props.answerContent}
+        </label> */}
+
+        {/* WORKS CORRECTLY ONLY IF USER SELECTS RIGHT ANSWER */}
+          {/* <label className="radioCustomLabel" htmlFor={props.answerType}>
+          {props.answerContent}
+        </label> */}
 
       </li>
     );

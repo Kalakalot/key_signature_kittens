@@ -44,25 +44,20 @@
   transition: all 0.3s;
 }
 
-/* NOT SURE WHAT THIS IS DOING */
+/* FILL IN BUTTON SELECTED FOR CORRECT ANSWERS, FILLS IN LAST WRONG BUTTON FOR INCORRECT ANSWERS */
 /* .radioCustomButton:checked ~ .radioCustomLabel:before {
   content: '';
-  background: #8bc53f;  */
-   /* no-repeat; */
-  /* background-size: 27px;
-  border-color: #8bc53f;
+  background: #4e7370;  
 } */
 
-/* highlighting for correct and incorrect answers */
-.radioCustomButton:checked + .answer__item--is-correct {
+
+/* highlighting for correct and incorrect answers */.answer__item--is-correct {
   background-color: #b2dbaf; 
 }
 
-.radioCustomButton:checked + .answer__item--is-incorrect {
+.answer__item--is-incorrect {
   background-color: #eda6a6; 
 }
-
-
 
 /* Animation */
 .fade-enter {
