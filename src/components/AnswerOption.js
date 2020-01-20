@@ -4,7 +4,6 @@ import './AnswerOption.css'
 
   function AnswerOption(props) {
 
-    
     return (
       <li className="answerOption">
         <input
@@ -17,19 +16,40 @@ import './AnswerOption.css'
           disabled={props.answer}
           onChange={props.onAnswerSelected}
         />
-        {console.log((props.answerType === props.answer)) === true? true : false}
 
-        <label 
+        {/* ONLY HIGHLIGHTS INCORRECT ANSWERS AFTER SELECTION */}
+        {/* <label 
           className={
             ((props.answerType === props.answer) === true) 
             &&
               (props.answerType === "incorrect")
-               ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel"}
+              ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel"}
+          htmlFor={props.answerType}>
+          {props.answerContent}
+        </label> */}
+
+        <label 
+
+          className={
+            (((props.answerType === props.answer) === true) 
+            
+          &&
+            
+              ((props.answerType === "correct")
+              ? "radioCustomLabel" : "radioCustomLabel answer__item--is-incorrect" ))
+            
+              ||
+
+              ((props.answerType === "incorrect")
+              ? "radioCustomLabel" : "radioCustomLabel answer__item--is-correct" )
+          
+            }
+              
           htmlFor={props.answerType}>
           {props.answerContent}
         </label>
 
-        {/* SHOWS CORRECT/INCORRECT ANSWER STYLE ALWAYS */}
+        {/* SHOWS CORRECT/INCORRECT ANSWER STYLE BEFORE ANSWER SELECTION */}
         {/* <label 
             className={props.answerType === "incorrect" ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel answer__item--is-correct"} 
             htmlFor={props.answerType}>
