@@ -23,7 +23,7 @@ const quizData =
       },
     ],
     "key_signature": "C major",
-    "kitten_value": "100",
+    "kitten_value": "10",
     "accidentals": [
       ""
     ],
@@ -55,7 +55,7 @@ const quizData =
       },
     ],
     "key_signature": "D major",
-    "kitten_value": "140",
+    "kitten_value": "14",
     "accidentals": [
       "F sharp",
       "C sharp"
@@ -88,7 +88,7 @@ const quizData =
       },
     ],
     "key_signature": "G major",
-    "kitten_value": "120",
+    "kitten_value": "12",
     "accidentals": "F sharp",
     "answer_explanation": "You can determine the key signature of a major key with sharps by going a half step up from the last sharp. A half step up from F sharp is G, which makes this G major.",
     "explanation_url": require('../assets/explanation_images/G_explanation.png'),
@@ -118,7 +118,7 @@ const quizData =
       },
     ],
     "key_signature": "A major",
-    "kitten_value": "160",
+    "kitten_value": "16",
     "accidentals": [
       "F sharp",
       "C sharp",
@@ -152,7 +152,7 @@ const quizData =
       },
     ],
     "key_signature": "E major",
-    "kitten_value": "180",
+    "kitten_value": "18",
     "accidentals": [
       "F sharp",
       "C sharp",
@@ -187,7 +187,7 @@ const quizData =
       },
     ],
     "key_signature": "B major",
-    "kitten_value": "200",
+    "kitten_value": "20",
     "accidentals": [
       "F sharp",
       "C sharp",
@@ -223,7 +223,7 @@ const quizData =
       },
     ],
     "key_signature": "F sharp major",
-    "kitten_value": "220",
+    "kitten_value": "22",
     "accidentals": [
       "F sharp",
       "C sharp",
@@ -260,7 +260,7 @@ const quizData =
       },
     ],
     "key_signature": "C sharp major",
-    "kitten_value": "220",
+    "kitten_value": "22",
     "accidentals": [
       "F sharp",
       "C sharp",
@@ -297,7 +297,7 @@ const quizData =
       },
     ],
     "key_signature": "F major",
-    "kitten_value": "120",
+    "kitten_value": "12",
     "accidentals": [
       "B flat"
     ],
@@ -328,7 +328,7 @@ const quizData =
     },
   ],
   "key_signature": "B flat major",
-  "kitten_value": "140",
+  "kitten_value": "14",
   "accidentals": [
     "B flat", 
     "E flat"
@@ -361,7 +361,7 @@ const quizData =
     },
   ],
   "key_signature": "E flat major",
-  "kitten_value": "160",
+  "kitten_value": "16",
   "accidentals": [
     "B flat", 
     "E flat", 
@@ -395,7 +395,7 @@ const quizData =
     },
   ],
   "key_signature": "A flat major",
-  "kitten_value": "180",
+  "kitten_value": "18",
   "accidentals": [
     "B flat", 
     "E flat", 
@@ -430,7 +430,7 @@ const quizData =
     },
   ],
   "key_signature": "D flat major",
-  "kitten_value": "200",
+  "kitten_value": "20",
   "accidentals": [
     "B flat", 
     "E flat", 
@@ -466,7 +466,7 @@ const quizData =
     },
   ],
   "key_signature": "G flat major",
-  "kitten_value": "220",
+  "kitten_value": "22",
   "accidentals": [
     "B flat", 
     "E flat", 
@@ -503,7 +503,7 @@ const quizData =
     },
   ],
   "key_signature": "C flat major",
-  "kitten_value": "240",
+  "kitten_value": "24",
   "accidentals": [
     "B flat", 
     "E flat", 

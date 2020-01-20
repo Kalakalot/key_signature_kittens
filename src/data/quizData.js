@@ -24,7 +24,7 @@ const quizData =
       },
     ],
     "key_signature": "C major",
-    "kitten_value": "100",
+    "kitten_value": "10",
     "accidentals": [
       ""
     ],
@@ -56,7 +56,7 @@ const quizData =
       },
     ],
     "key_signature": "D major",
-    "kitten_value": "140",
+    "kitten_value": "14",
     "accidentals": [
       "F sharp",
       "C sharp"
@@ -89,7 +89,7 @@ const quizData =
       },
     ],
     "key_signature": "G major",
-    "kitten_value": "120",
+    "kitten_value": "12",
     "accidentals": "F sharp",
     "answer_explanation": "You can determine the key signature of a major key with sharps by going a half step up from the last sharp. A half step up from F sharp is G, which makes this G major.",
     "explanation_url": require('../assets/explanation_images/G_explanation.png'),
