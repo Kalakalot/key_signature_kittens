@@ -21,10 +21,10 @@ import './AnswerOption.css'
 
         <label 
           className={
-            // ((props.answerType === props.answer) === true) 
-            // &&
+            ((props.answerType === props.answer) === true) 
+            &&
               (props.answerType === "incorrect")
-               ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel answer__item--is-correct"}
+               ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel"}
           htmlFor={props.answerType}>
           {props.answerContent}
         </label>
