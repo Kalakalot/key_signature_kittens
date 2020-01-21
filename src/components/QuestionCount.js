@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
   function QuestionCount(props) {
     return (
       <div className="questionCount">
-        Question <strong>{props.counter}</strong> of {props.total}
+        Question {props.counter} of {props.total}
       </div>
     );
   }
