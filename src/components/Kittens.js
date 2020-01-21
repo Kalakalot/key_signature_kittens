@@ -18,14 +18,12 @@ class Kittens extends Component {
           <p>
           Here are your kittens:
           <div className="kittenContainer">
-          {Array(this.state.kittensEarned).fill(<Kitten />)}
-)}
-
+          {Array.from(Array(this.state.kittensEarned)).map((x, index) => <Kitten key={index} />)}
           </div>
-        </p>
+          </p>
       </div>
-    );
-  }
+      );
+    };
 }
 
 export default Kittens;
