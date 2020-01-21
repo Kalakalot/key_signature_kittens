@@ -16,7 +16,7 @@ class Kittens extends Component {
     return (
       <div>
           <p>
-          Here are your kittens!
+          Here are your kittens:
           <div className="kittenContainer">
           {Array(this.state.kittensEarned).fill(<Kitten />)}
           </div>
