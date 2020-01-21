@@ -193,14 +193,15 @@ class App extends Component {
           <div className="App-header">
             <h1>Key Signature Kittens</h1>
             {/* <h3>Learn Key Signature, Earn Kittens!</h3> */}
-            <h3> LEARN KEY SIGNATURES, EARN KITTENS!</h3>
+            <h3> Learn key signatures, earn kittens!</h3>
             <Sprites/>
+            <br/>
           <div>
           </div>  
           </div>
           <section className="App-subhead">
                {/* display answer explananation popup for second question and beyond */}
-        {this.state.questionId > 1 ?  <Button variant="outline-dark" onClick={this.togglePopup.bind(this)}>SHOW ANSWER EXPLANATION</Button> : null }  
+        {this.state.questionId > 1 ?  <Button variant="outline-dark" onClick={this.togglePopup.bind(this)}>VIEW ANSWER EXPLANATION</Button> : null }  
           <KittensEarned kittensEarned={this.state.kittensEarned}
           />
 

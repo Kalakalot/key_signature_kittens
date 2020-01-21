@@ -7,6 +7,7 @@
   /* background-color:#80bdbf; */
   background-color:#80bab6;
   font-family: 'Miriam Libre', sans-serif;
+  margin-left: -32px;
 }
 
 .App-header {
@@ -27,7 +28,7 @@
 
 .App-subhead {
   margin-left: 5em;
-  margin-right: 8em;
+  margin-right: 6em;
   display: flex;
   justify-content: space-between;
 }
