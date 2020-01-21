@@ -1,18 +1,22 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import kittenImage from '../assets/single_cat.png';
-import './Kitten.css'
+import forwardKitten from '../assets/cat_walking_forward.png';
+import './Kitten.css';
+import Spritesheet from 'react-responsive-spritesheet';
 
 const Kitten = () => {
   return (
-    <div className="kittenImage">
-    <img src={kittenImage} alt="kitten"/>
-    </div>
+  
+    <Spritesheet
+    image={forwardKitten}
+    widthFrame={32}
+    heightFrame={32}
+    steps={3}
+    fps={3}
+    loop={true}
+    autoplay={true}
+    startAt={1}
+  />
   );
 }
 
 export default Kitten;
-
-// Kitten.propTypes = {
-//   kittenImage: PropTypes.string.isRequired
-// };
