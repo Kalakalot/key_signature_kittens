@@ -18,7 +18,7 @@ import Button from 'react-bootstrap/Button';
         <Kittens kittensEarned={props.kittensEarned}/>
         <br/>
         <div className="button__try-again">
-        <Button variant="outline-dark" onClick={() => window.location.reload(false)} margin="auto">TRY AGAIN</Button>
+        <Button variant="outline-dark" onClick={() => window.location.reload(false)} margin="auto">PLAY AGAIN</Button>
         </div>
       </div>
       </>

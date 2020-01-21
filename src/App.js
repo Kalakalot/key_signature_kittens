@@ -201,7 +201,7 @@ class App extends Component {
           </div>
           <section className="App-subhead">
                {/* display answer explananation popup for second question and beyond */}
-        {this.state.questionId > 1 ?  <Button variant="outline-dark" onClick={this.togglePopup.bind(this)}>VIEW ANSWER EXPLANATION</Button> : null }  
+        {this.state.questionId > 1 ?  <Button variant="outline-dark" onClick={this.togglePopup.bind(this)}>VIEW ANSWER EXPLANATION FOR PREVIOUS QUESTION</Button> : null }  
           <KittensEarned kittensEarned={this.state.kittensEarned}
           />
 
