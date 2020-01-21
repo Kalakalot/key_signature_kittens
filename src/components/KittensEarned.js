@@ -6,8 +6,8 @@ const KittensEarned = (props) => {
     
   return (
     <section className="kittens_earned">
-          <h2 className="score">
-            Kittens Earned: {props.kittensEarned}</h2>
+          <h3 className="score">
+            <strong> KITTENS EARNED: {props.kittensEarned}</strong></h3>
     </section>
   );
 }

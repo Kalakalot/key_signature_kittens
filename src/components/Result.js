@@ -2,6 +2,8 @@ import React from 'react';
 import './Result.css';
 import Kittens from './Kittens'
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
+
 
 
   const Result = (props) => {
@@ -9,11 +11,15 @@ import PropTypes from 'prop-types';
     return (
       <>
       <div className="result">
-        <button onClick={() => window.location.reload(false)}>Try again</button>
+      <br/>
         <p>
         You got <strong>{props.correctAnswers}</strong> out of <strong>{props.totalQuestions}</strong> right! Here are your kittens ...
         </p>
         <Kittens kittensEarned={props.kittensEarned}/>
+        <div className="button__try-again">
+          <br/>
+        <Button variant="outline-dark" onClick={() => window.location.reload(false)}>TRY AGAIN</Button>
+        </div>
       </div>
       </>
     );

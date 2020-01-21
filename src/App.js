@@ -8,6 +8,9 @@ import Quiz from './components/Quiz';
 import Result from './components/Result';
 import Popup from './components/AnswerExplanationPopup';  
 import update from 'react-addons-update';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+
 
 // structure based on Mitch Gavin's "Create a quiz with React" tutorial: https://mitchgavan.com/react-quiz/
 class App extends Component {
@@ -30,7 +33,7 @@ class App extends Component {
       answerExplanation: '',
       answerURL: '',
       showPopup: false,
-      popupButtonText: 'View answer explanation for previous question'
+      // popupButtonText: 'Show details for previous question'
     };
   }
 
@@ -195,15 +198,16 @@ class App extends Component {
           <div>
           </div>  
           </div>
-          <div className="App-body">
+          <section className="App-subhead">
+               {/* display answer explananation popup for second question and beyond */}
+        {this.state.questionId > 1 ?  <Button variant="outline-dark" onClick={this.togglePopup.bind(this)}>SHOW ANSWER EXPLANATION</Button> : null }  
           <KittensEarned kittensEarned={this.state.kittensEarned}
           />
 
-        <section>
 
-         {/* display answer explananation popup for second question and beyond */}
-        {this.state.questionId > 1 ?  <button onClick={this.togglePopup.bind(this)}>View Answer Explanation for Previous Question</button> : null }  
-
+      
+        </section>
+        <div className="App-body">
         {this.state.showPopup ?  
         <Popup 
           explanation={this.state.answerExplanation}
@@ -214,7 +218,6 @@ class App extends Component {
         }  
 
         {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
-        </section>
         </div>
         </div>
         );         
