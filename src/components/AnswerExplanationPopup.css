@@ -8,26 +8,35 @@
   left: 0;  
   right: 0;  
   margin: auto;  
-  /* background-color:#80bdbf; */
-  background-color: white;  
+  background-color:#80bab6;
+  padding-top: 1em;
 }  
 
 .popup\_inner {  
-  /* position: fixed;   */
-  /* left: 25%;  
-  right: 25%;  
-  top: 25%;  
-  bottom: 25%;   */
   margin: auto;  
   border-radius: 20px;  
   background: white;  
   z-index: 100;
-  /* position:relative; */
 }
 
+.explanation_container {
+  display: flex;
+  margin-left: 3em;
+  margin-right: 3em;
+  justify-content: space-around;
+}
+
+.explanation_container img {
+  width: 25%;
+  padding-right: 2em;
+}
+
+.button {
+  padding-top: 1em;
+  text-align: center;
+}
 .explanation_text {
-  font-family: 'Fredoka One', cursive;
-  color: #c9e165;
-  letter-spacing: 5px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
   font-size: 1.5em;
 }

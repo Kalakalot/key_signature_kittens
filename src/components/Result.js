@@ -16,9 +16,9 @@ import Button from 'react-bootstrap/Button';
         You got <strong>{props.correctAnswers}</strong> out of <strong>{props.totalQuestions}</strong> right! Here are your kittens ...
         </p>
         <Kittens kittensEarned={props.kittensEarned}/>
+        <br/>
         <div className="button__try-again">
-          <br/>
-        <Button variant="outline-dark" onClick={() => window.location.reload(false)}>TRY AGAIN</Button>
+        <Button variant="outline-dark" onClick={() => window.location.reload(false)} margin="auto">TRY AGAIN</Button>
         </div>
       </div>
       </>

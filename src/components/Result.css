@@ -1,3 +1,7 @@
+.button__try-again {
+  text-align: center;
+}
+
 .result {
   min-height: 100vh; 
 }
