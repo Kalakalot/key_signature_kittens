@@ -2,12 +2,14 @@ import React from 'react';
 import Question from './Question';
 import QuestionCount from './QuestionCount'; 
 import AnswerOption from './AnswerOption';
+import './Quiz.css'
 import PropTypes from 'prop-types';
 
 const Quiz = (props) => {
 
   function renderAnswerOptions(key) {
     return (
+      <p> 
       <AnswerOption
         key={key.content}
         answerContent={key.content}
@@ -16,6 +18,7 @@ const Quiz = (props) => {
         questionId={props.questionId}
         onAnswerSelected={props.onAnswerSelected}
       />
+      </p> 
     );
   }
 
@@ -23,6 +26,7 @@ const Quiz = (props) => {
   return (
     <>
     <div className="quiz">
+      <p> 
       <QuestionCount
         counter={props.questionId}
         total={props.questionTotal}
@@ -33,6 +37,7 @@ const Quiz = (props) => {
           {props.answerOptions.map(renderAnswerOptions)}
         </ul>
       </div>
+      </p>
     </div>
   </>
   );

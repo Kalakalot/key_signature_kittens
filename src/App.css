@@ -1,13 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:200,300,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Miriam+Libre&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Baloo|Baloo+Bhai|Bowlby+One|Bowlby+One+SC|Bungee|Bungee+Inline|Concert+One|Fascinate+Inline|Zilla+Slab+Highlight&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo|Baloo+Bhai|Bowlby+One|Bowlby+One+SC|Bungee|Bungee+Inline|Concert+One|Fascinate+Inline|Roboto|Zilla+Slab+Highlight&display=swap');
 
 .App {
   /* text-align: center; */
   /* background-color:#80bdbf; */
   background-color:#80bab6;
-  font-family: 'Miriam Libre', sans-serif;
+  /* font-family: 'Miriam Libre', sans-serif; */
   margin-left: -32px;
 }
 
