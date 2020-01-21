@@ -191,9 +191,9 @@ class App extends Component {
         
         <div className="App">
           <div className="App-header">
-            <h1>Key Signature Kittens</h1>
+            <h1>Key signature kittenS</h1>
             {/* <h3>Learn Key Signature, Earn Kittens!</h3> */}
-            <h3> Learn key signatures, earn kittens!</h3>
+            <h3>LEARN KEY SIGNATURES, EARN KITTENS</h3>
             <Sprites/>
             <br/>
           <div>
