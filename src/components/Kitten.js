@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import kittenImage from '../assets/single_cat.png';
 import './Kitten.css'
 
@@ -13,6 +13,6 @@ const Kitten = () => {
 
 export default Kitten;
 
-Kitten.propTypes = {
-  kittenImage: PropTypes.string.isRequired
-};
+// Kitten.propTypes = {
+//   kittenImage: PropTypes.string.isRequired
+// };

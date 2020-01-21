@@ -1,6 +1,5 @@
 import React from 'react';
 import './Result.css';
-import Kittens from './Kittens'
 import PropTypes from 'prop-types';
 
 
@@ -9,12 +8,11 @@ import PropTypes from 'prop-types';
     return (
       <>
       <div className="result">
-        <button onClick={() => window.location.reload(false)}>Try again</button>
         <p>
         You got <strong>{props.correctAnswers}</strong> out of <strong>{props.totalQuestions}</strong> right!
         </p>
+        <button onClick={() => window.location.reload(false)}>Try again</button>
       </div>
-      <Kittens kittensEarned={props.kittensEarned} />
       </>
     );
   }

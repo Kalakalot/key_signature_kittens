@@ -19,6 +19,8 @@ class Kittens extends Component {
           Here are your kittens:
           <div className="kittenContainer">
           {Array(this.state.kittensEarned).fill(<Kitten />)}
+)}
+
           </div>
         </p>
       </div>
@@ -27,4 +29,8 @@ class Kittens extends Component {
 }
 
 export default Kittens;
+
+Kittens.propTypes = {
+  kittensEarned: PropTypes.number.isRequired,
+};
 
