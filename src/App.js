@@ -3,6 +3,7 @@ import quizData from './data/quizData'
 import './App.css';
 import axios from 'axios';
 import Sprites from './components/Sprites';
+import KittensEarned from './components/KittensEarned';
 import Quiz from './components/Quiz';
 import ResultsDisplay from './components/ResultsDisplay';
 import Popup from './components/AnswerExplanationPopup';  
@@ -192,11 +193,11 @@ class App extends Component {
             <h3> LEARN KEY SIGNATURES, EARN KITTENS!</h3>
             <Sprites/>
           <div>
+          </div>  
+          </div>
 
-        
-        <section className="kittens_earned">
-          <h2 className="score">Kittens Earned: {this.state.kittensEarned}</h2>
-        </section>
+          <KittensEarned kittensEarned={this.state.kittensEarned}
+          />
 
         <section>
 
@@ -214,8 +215,6 @@ class App extends Component {
 
         {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
         </section>
-        </div>  
-        </div>
         </div>
         );         
       }; 
