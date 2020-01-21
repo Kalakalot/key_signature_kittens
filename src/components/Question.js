@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
     return (
       <div>
         <h2 className="question">What key signature is this?</h2>
-        <img src={props.question} alt={props.alt}/>
+        <img src={props.question} alt={props.alt} className='questionImage'/>
       </div>
     );
   }

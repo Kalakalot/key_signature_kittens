@@ -7,7 +7,7 @@ class Kittens extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      points: props.kittensEarned
+      kittensEarned: props.kittensEarned
     };
   }
 
@@ -15,8 +15,8 @@ class Kittens extends Component {
     return (
       <div>
           <p>
-          + {this.state.points} points
-          {Array(this.state.points).fill(<Kitten />)}
+          + {this.state.kittensEarned} kittens earned
+          {Array(this.state.kittensEarned).fill(<Kitten />)}
         </p>
       </div>
     );

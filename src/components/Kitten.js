@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import kittenImage from '../assets/cat_white-32x32.png'
+import kittenImage from '../assets/single_cat.png';
+import './Kitten.css'
 
 const Kitten = () => {
   return (
-    <img src={kittenImage} alt="kitten" />
+    <div className="kittenImage">
+    <img src={kittenImage} alt="kitten"/>
+    </div>
   );
 }
 
