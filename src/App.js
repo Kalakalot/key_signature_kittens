@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import quizData from './data/quizData'
 import './App.css';
-import axios from 'axios';
+import quizData from './data/quizData'
 import Sprites from './components/Sprites';
 import KittensEarned from './components/KittensEarned';
 import Quiz from './components/Quiz';
@@ -66,26 +65,6 @@ class App extends Component {
     }
     return object;
   };
-
-  // Code used to pull data from external MongoDB database
-  
-  // componentDidMount() {
-  //   axios.get('http://127.0.0.1:5000/')
-  //   .then(
-  //     (response) => {
-  //     const quizDatabase = response.data.map((quizDataSet) => {
-  //       return quizDataSet;
-  //     });
-  
-  //     this.setState({ 
-  //       quiz: quizDatabase,
-  //       error: '' 
-  //     });
-  //   })
-  //   .catch((error) => {
-  //     this.setState({ error: error.message });
-  //   });
-  // }
   
   setUserAnswer(answer) {
     const updatedAnswersCount = update(this.state.answersCount, {
@@ -178,17 +157,12 @@ class App extends Component {
   togglePopup() {  
     this.setState({  
       showPopup: !this.state.showPopup  
-    })  }
-
-  // onClick = () => this.setState({ showPopup: true })
-              
+    })  }   
+  
     render() {
-
-      // console.log(`kittensEarned from App: ${this.state.kittensEarned}`)
 
       return (
 
-        
         <div className="App">
           <div className="App-header">
             <h1>Key signature kittenS</h1>
@@ -201,12 +175,10 @@ class App extends Component {
           </div>
           <section className="App-subhead">
                {/* display answer explananation popup for second question and beyond */}
-        {this.state.questionId > 1 ?  <Button variant="outline-dark" onClick={this.togglePopup.bind(this)}>VIEW ANSWER EXPLANATION FOR PREVIOUS QUESTION</Button> : null }  
-          <KittensEarned kittensEarned={this.state.kittensEarned}
+            {this.state.questionId > 1 ?  <Button variant="outline-dark" onClick={this.togglePopup.bind(this)}>VIEW ANSWER EXPLANATION FOR PREVIOUS QUESTION</Button> : null }  
+            <KittensEarned kittensEarned={this.state.kittensEarned}
           />
 
-
-      
         </section>
         <div className="App-body">
         {this.state.showPopup ?  

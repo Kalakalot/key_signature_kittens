@@ -12,15 +12,15 @@ class Kittens extends Component {
     };
   }
 
-  render() {
-    return (
-      <div>
-          <div className="kittenContainer">
-          {Array.from(Array(this.state.kittensEarned)).map((x, index) => <Kitten key={index} />)}
-          </div>
-      </div>
-      );
-    };
+    render() {
+      return (
+        <div>
+            <div className="kittenContainer">
+            {Array.from(Array(this.state.kittensEarned)).map((x, index) => <Kitten key={index} />)}
+            </div>
+        </div>
+        );
+      };
 }
 
 export default Kittens;
