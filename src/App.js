@@ -5,6 +5,7 @@ import axios from 'axios';
 import Sprites from './components/Sprites';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
+import Kittens from './components/Kittens'
 import Popup from './components/AnswerExplanationPopup';  
 import update from 'react-addons-update';
 
@@ -147,7 +148,12 @@ class App extends Component {
     
   renderResults() {
     return (
+      <>
+      <Kittens 
+      kittensEarned={this.state.kittensEarned} 
+      />
       <Result correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length}/>
+      </>
     );
   }
   
@@ -175,8 +181,11 @@ class App extends Component {
   // onClick = () => this.setState({ showPopup: true })
               
     render() {
-      
+
+      // console.log(`kittensEarned from App: ${this.state.kittensEarned}`)
+
       return (
+
         
         <div className="App">
           <div className="App-header">
