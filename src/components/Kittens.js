@@ -15,7 +15,6 @@ class Kittens extends Component {
   render() {
     return (
       <div>
-          <p>Here are your kittens:</p>
           <div className="kittenContainer">
           {Array.from(Array(this.state.kittensEarned)).map((x, index) => <Kitten key={index} />)}
           </div>

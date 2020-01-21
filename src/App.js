@@ -5,7 +5,7 @@ import axios from 'axios';
 import Sprites from './components/Sprites';
 import KittensEarned from './components/KittensEarned';
 import Quiz from './components/Quiz';
-import ResultsDisplay from './components/ResultsDisplay';
+import Result from './components/Result';
 import Popup from './components/AnswerExplanationPopup';  
 import update from 'react-addons-update';
 
@@ -149,7 +149,7 @@ class App extends Component {
   renderResults() {
     return (
       <>
-      <ResultsDisplay
+      <Result
         correctAnswers={this.state.answersCount.correct} totalQuestions={quizData.length} 
         kittensEarned={this.state.kittensEarned} />  
       </>
@@ -195,7 +195,7 @@ class App extends Component {
           <div>
           </div>  
           </div>
-
+          <div className="App-body">
           <KittensEarned kittensEarned={this.state.kittensEarned}
           />
 
@@ -215,6 +215,7 @@ class App extends Component {
 
         {this.state.answersCount.correct + this.state.answersCount.incorrect === quizData.length ? this.renderResults() : this.renderQuiz()}
         </section>
+        </div>
         </div>
         );         
       }; 
