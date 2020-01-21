@@ -16,48 +16,13 @@ import './AnswerOption.css'
           disabled={props.answer}
           onChange={props.onAnswerSelected}
         />
-
-        {/* ONLY HIGHLIGHTS INCORRECT ANSWERS AFTER SELECTION */}
-        {/* <label 
-          className={
-            ((props.answerType === props.answer) === true) 
-            &&
-              (props.answerType === "incorrect")
-              ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel"}
-          htmlFor={props.answerType}>
-          {props.answerContent}
-        </label> */}
-
         <label 
-
           className={
-            // this condition makes styling only appear after user selects an answer
-            ((props.answerType === props.answer) === false) 
-          
-          
-          ? 
-          
-          "radioCustomLabel" 
-          
-          : 
-          
-              ((props.answerType === "incorrect") ? 
-
-              "radioCustomLabel" : "radioCustomLabel answer__item--is-correct" )
-          
-            }
-              
+            // this ungainly bit of code highlights green when correct answer is selected
+            ((props.answerType === props.answer) === false) ? "radioCustomLabel" : ((props.answerType === "incorrect") ? "radioCustomLabel" : "radioCustomLabel answer__item--is-correct" )}
           htmlFor={props.answerType}>
           {props.answerContent}
         </label>
-
-        {/* SHOWS CORRECT/INCORRECT ANSWER STYLE BEFORE ANSWER SELECTION */}
-        {/* <label 
-            className={props.answerType === "incorrect" ? "radioCustomLabel answer__item--is-incorrect" : "radioCustomLabel answer__item--is-correct"} 
-            htmlFor={props.answerType}>
-          {props.answerContent}
-        </label> */}
-
       </li>
     );
   }

@@ -22,7 +22,6 @@ const Quiz = (props) => {
     );
   }
 
-
   return (
     <section className="quiz">
       <QuestionCount

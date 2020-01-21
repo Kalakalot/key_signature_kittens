@@ -4,9 +4,7 @@ import Kittens from './Kittens'
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 
-
-
-  const Result = (props) => {
+const Result = (props) => {
     
     return (
       <>

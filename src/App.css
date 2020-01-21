@@ -1,7 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:200,300,400&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Miriam+Libre&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Baloo|Baloo+Bhai|Bowlby+One|Bowlby+One+SC|Bungee|Bungee+Inline|Concert+One|Fascinate+Inline|Roboto|Zilla+Slab+Highlight&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo|Baloo+Bhai|Bowlby+One|Bowlby+One+SC|Fredoka+One|Roboto|Zilla+Slab+Highlight&display=swap');
 
 .App {
   background-color:#80bab6;
@@ -31,13 +28,7 @@
 }
 
 .App-header h1 {
-  /* font-family: 'Bungee Shade', cursive; */
   font-family: 'Bowlby One SC', cursive;
-
-
-  /* font-family: 'Fredoka One', cursive; */
-  /* color: #f7f765; */
-  /* color: #F5640A; */
   color: #c94e02;
   letter-spacing: 5px;
   font-size: 3.5em;
@@ -46,8 +37,6 @@
 
 h3 {
   font-family: 'Nunito', sans-serif;
-  /* font-family: 'Miriam Libre', sans-serif; */
-  color: #183C4A;
   font-size: 1.75em;
   font-weight: 400;
   letter-spacing: 3px;
