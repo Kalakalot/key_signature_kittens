@@ -1,4 +1,13 @@
 /* AnswerOption Component */
+
+.answerOptions {
+  /* margin: 0;
+  padding: 0; */
+  margin-top: 1em;
+  list-style: none;
+  width: 100%
+}
+
 .answerOption {
   border-top: 1px solid #eee;
 }
@@ -43,13 +52,6 @@
   border-radius: 50%;
   transition: all 0.3s;
 }
-
-/* FILL IN BUTTON SELECTED FOR CORRECT ANSWERS, FILLS IN LAST WRONG BUTTON FOR INCORRECT ANSWERS */
-/* .radioCustomButton:checked ~ .radioCustomLabel:before {
-  content: '';
-  background: #4e7370;  
-} */
-
 
 /* highlighting for correct and incorrect answers */.answer__item--is-correct {
   background-color: #b2dbaf; 

@@ -58,11 +58,6 @@ import './AnswerOption.css'
           {props.answerContent}
         </label> */}
 
-        {/* WORKS CORRECTLY ONLY IF USER SELECTS RIGHT ANSWER */}
-          {/* <label className="radioCustomLabel" htmlFor={props.answerType}>
-          {props.answerContent}
-        </label> */}
-
       </li>
     );
   }

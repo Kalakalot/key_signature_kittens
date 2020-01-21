@@ -24,22 +24,19 @@ const Quiz = (props) => {
 
 
   return (
-    <>
-    <div className="quiz">
-      <p> 
+    <section className="quiz">
       <QuestionCount
         counter={props.questionId}
         total={props.questionTotal}
       />
+      <h2 className="question">What key signature is this?</h2>
       <div className="questionContainer">
         <Question question={props.question} alt={props.alt}/>
         <ul className="answerOptions">
           {props.answerOptions.map(renderAnswerOptions)}
         </ul>
       </div>
-      </p>
-    </div>
-  </>
+    </section>
   );
 }
 

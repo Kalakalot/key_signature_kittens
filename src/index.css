@@ -43,13 +43,6 @@ body {
   padding: 1.5rem 2.5rem;
 }
 
-/* Quiz Component */
-.answerOptions {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 /* QuestionCount Component */
 .questionCount {
   padding: 1.5rem 2.5rem 0;

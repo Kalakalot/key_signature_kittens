@@ -3,11 +3,14 @@ import './Question.css';
 import PropTypes from 'prop-types';
 
   function Question(props) {
+
+  const imageSize = {
+    height: '300px',
+  }
     
     return (
       <div>
-        <h2 className="question">What key signature is this?</h2>
-        <img src={props.question} alt={props.alt} className='questionImage'/>
+        <img src={props.question} alt={props.alt} style={imageSize} className='questionImage'/>
       </div>
     );
   }
