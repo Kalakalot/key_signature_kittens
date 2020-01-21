@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Kitten from './Kitten'
+import './Kittens.css'
 
 
 class Kittens extends Component {
@@ -15,8 +16,10 @@ class Kittens extends Component {
     return (
       <div>
           <p>
-          + {this.state.kittensEarned} kittens earned
+          Here are your kittens!
+          <div className="kittenContainer">
           {Array(this.state.kittensEarned).fill(<Kitten />)}
+          </div>
         </p>
       </div>
     );
