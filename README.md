@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Key signature kittens](https://key-signature-kittens.firebaseapp.com/) is a lightweight React application for musicians and music theory students to learn key signatures. It provides a gamified alternative to rote memorization for major keys. Users are shown a picture of each key signature in treble clef and "earn" kittens for correct answers. After an answer has been provided, the user can view an answer explanation. Once answers have been provided for all 15 key signatures, the user is shown a results and a parade of all the kittens earned. 
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Key signature images from open source music composition program [MuseScore](https://musescore.org/en). Cat illustrations by [bluecarrot16 at opengameart](https://opengameart.org/node/69399). All text and diagrams created by the programmer.
+
+Created by [Julia Kingrey](https://kalakalot.github.io/lib/index.html), a software development student at [Ada Developer's Academy](https://adadevelopersacademy.org/), for her cohort 12 capstone project. 
 
 ## Available Scripts
 
